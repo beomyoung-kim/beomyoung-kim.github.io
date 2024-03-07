@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
-<style>
-    .badge {
-        font-size: 24px; /* Adjust the size as needed */
-    }
-</style>
+.badge-link img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust the spacing between badges */
+}
+
+.badge-container {
+    display: flex; /* Arrange badges in a row */
+    justify-content: center; /* Center align the badges */
+}
 	
 <head>
     <meta charset="utf-8">
@@ -92,15 +97,17 @@
                         <a href="https://www.linkedin.com/in/beomyoung-kim/">[linkedin.com/in/beomyoung-kim/]</a>
                     </p>
 
-			<a href="https://github.com/qjadud1994" target="_blank" class="badge-link">
-			    <img src="https://img.shields.io/badge/GitHub-Profile-blue?style=social&logo=github" alt="GitHub Badge">
-			</a>
-			<a href="https://www.linkedin.com/in/beomyoung-kim" target="_blank" class="badge-link">
-			    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=flat" alt="LinkedIn Badge">
-			</a>
-			<a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ&hl=ko" target="_blank" class="badge-link">
-			    <img src="https://img.shields.io/badge/Google%20Scholar-4285F4?logo=googlescholar&logoColor=fff&style=flat" alt="Google Scholar Badge">
-			</a>
+		<div class="badge-container">
+		    <a href="https://github.com/qjadud1994" target="_blank" class="badge-link">
+		        <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat" alt="GitHub Badge">
+		    </a>
+		    <a href="https://www.linkedin.com/in/beomyoung-kim" target="_blank" class="badge-link">
+		        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=flat" alt="LinkedIn Badge">
+		    </a>
+		    <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ&hl=ko" target="_blank" class="badge-link">
+		        <img src="https://img.shields.io/badge/Google%20Scholar-4285F4?logo=googlescholar&logoColor=fff&style=flat" alt="Google Scholar Badge">
+		    </a>
+		</div>
                 </div>
             </div>
         </div>
