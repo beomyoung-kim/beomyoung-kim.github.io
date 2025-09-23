@@ -1,457 +1,497 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
-<style>
-	.circular-img {
-	    width: 200px; /* Adjust the width of the circular image */
-	    height: 200px; /* Adjust the height of the circular image */
-	    border-radius: 50%; /* Make the image circular */
-	    overflow: hidden; /* Hide the parts of the image outside the border */
-	    margin: 20px auto; /* Center align the circular image and add space around it */
-	    float: left;
-	}
-	
-	.circular-img img {
-	    width: 100%; /* Make the image fill the circular container */
-	    height: auto; /* Maintain aspect ratio */
-	}
-</style>
-	
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralAic88apRqaFU/uuUkisdWGcdnFvrENzYEUrssLueHZBI3iKZNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9Hm/JhZzimplicitagIuKggoKESWS1sqGs01sbL8FomDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .circular-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 20px auto;
+            float: left;
+        }
+
+        .circular-img img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Style for the [material] link */
+        .gallery-link {
+            font-weight: bold;
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        /* Hide the gallery image links */
+        .hidden-gallery {
+            display: none;
+        }
+    </style>
+	
 </head>
 
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Publication</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+        <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Publication</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+        <div id="lead">
+        <div id="lead-content">
+            <h1>Beomyoung Kim</h1>
+            <h2>AI Research Engineer</h2>
+            <a href="https://github.com/beomyoung-kim/beomyoung-kim.github.io/raw/master/images/CV_beomyoung_kim.pdf" class="btn-rounded-white">Download Resume</a>
+        </div>
+                <div id="lead-overlay"></div>
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Beomyoung Kim</h1>
-            <h2>AI Research Engineer</h2>
-            <a href="https://github.com/beomyoung-kim/beomyoung-kim.github.io/raw/master/images/CV_beomyoung_kim.pdf" class="btn-rounded-white">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+            </div>
+        <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+		    <br>
+		    <div class="circular-img">
+        		<img src="https://github.com/beomyoung-kim/beomyoung-kim.github.io/raw/master/images/pic_beom.jpg" alt="Circular Image">
+		    </div>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        I am an AI research engineer at NAVER and a Ph.D. student at the Graduate School of AI at KAIST, under the guidance of Professor Sung Ju Hwang in MLAI Lab. My primary research interests lie in advancing the field of comprehensive image recognition techniques in real-world scenarios, particularly focusing on image segmentation and object detection.
+		    </p><br>
+		    <p>
+			    In my research journey, I am deeply involved in exploring cutting-edge technologies such as vision foundation models like SAM, as well as developing multi-modal vision models. Additionally, I am actively engaged in pioneering label-efficient segmentation methods, including weakly or semi-supervised image segmentation. Another area of my focus is continual learning in image segmentation, where I strive to push the boundaries of knowledge and innovation.
+		    </p><br>
+		    <p>
+			    Through my work, I aspire to contribute significantly to the advancement of artificial intelligence and its applications in solving real-world challenges. I am driven by a passion for innovation and a relentless pursuit of excellence in research and development.
+		    </p><br>
 
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-		    <br>
-		    <div class="circular-img">
-        		<img src="https://github.com/beomyoung-kim/beomyoung-kim.github.io/raw/master/images/pic_beom.jpg" alt="Circular Image">
-		    </div>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                        I am an AI research engineer at NAVER and a Ph.D. student at the Graduate School of AI at KAIST, under the guidance of Professor Sung Ju Hwang in MLAI Lab. My primary research interests lie in advancing the field of comprehensive image recognition techniques in real-world scenarios, particularly focusing on image segmentation and object detection.
-		    </p><br>
-		    <p>
-			    In my research journey, I am deeply involved in exploring cutting-edge technologies such as vision foundation models like SAM, as well as developing multi-modal vision models. Additionally, I am actively engaged in pioneering label-efficient segmentation methods, including weakly or semi-supervised image segmentation. Another area of my focus is continual learning in image segmentation, where I strive to push the boundaries of knowledge and innovation.
-		    </p><br>
-		    <p>
-			    Through my work, I aspire to contribute significantly to the advancement of artificial intelligence and its applications in solving real-world challenges. I am driven by a passion for innovation and a relentless pursuit of excellence in research and development.
-		    </p><br>
-
-		    <div class="text-center">
-		    	<a href="https://github.com/qjadud1994" target="_blank">
-			        <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat" alt="GitHub Badge">
-		    	</a>
+		    <div class="text-center">
+		    	<a href="https://github.com/qjadud1994" target="_blank">
+			        <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat" alt="GitHub Badge">
+		    	</a>
 			<a href="https://www.linkedin.com/in/beomyoung-kim" target="_blank">
-			        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=flat" alt="LinkedIn Badge">
+			        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=flat" alt="LinkedIn Badge">
 			</a>
-		        <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ&hl=ko" target="_blank">
+		        <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ&hl=ko" target="_blank">
 				<img src="https://img.shields.io/badge/Google%20Scholar-4285F4?logo=googlescholar&logoColor=fff&style=flat" alt="Google Scholar Badge">
-		        </a>
-    		    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
+		        </a>
+    		    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="optional-section">
+    <h2 class="heading">News</h2>
 
-  <div class="optional-section">
-    <h2 class="heading">News</h2>
-
-    <div class="optional-section-block">
-    	<ul>
+    <div class="optional-section-block">
+    	<ul>
 		<h3>🔥Jun. 2025: One paper accepted to ICCV 2025</h3>	
-        	<h3>🔥Mar. 2024: One paper accepted to CVPR 2024</h3>	
+        	<h3>🔥Mar. 2024: One paper accepted to CVPR 2024</h3>	
 		<h3>🔥Nov. 2023: One paper accepted to WACV 2024</h3>
 		<h3>🔥Feb. 2023: One paper accepted to CVPR 2023</h3>
 		<h3>🔥Mar. 2022: One paper accepted to CVPR 2022</h3>
-    	</ul>
-    </div>
-    <!-- End .optional-section-block -->
-	
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-	    <div data-date="January 2021 – current">
-                <h3>NAVER</h3>
-                <h4>CLOVA VISION - Image Vision</h4>
-                <p>
-                    AI Research Engineer at Naver Clova Vision Image-Vision team.
-                </p>
-            </div>
+    	</ul>
+    </div>
+        <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+	    <div data-date="January 2021 – current">
+                <h3>NAVER</h3>
+                <h4>CLOVA VISION - Image Vision</h4>
+                <p>
+                    AI Research Engineer at Naver Clova Vision Image-Vision team.
+                </p>
+            </div>
 		
-            <div data-date="July 2020 – December 2020">
-                <h3>NAVER</h3>
-                <h4>CLOVA VISUAL AI - FACE</h4>
-                <p>
-                    Internship at Naver Clova Visual AI FACE team.
-                </p>
-            </div>
+            <div data-date="July 2020 – December 2020">
+                <h3>NAVER</h3>
+                <h4>CLOVA VISUAL AI - FACE</h4>
+                <p>
+                    Internship at Naver Clova Visual AI FACE team.
+                </p>
+            </div>
 		
-            <div data-date="July 2019 – July 2019">
-                <h3>Hyundai Mobis</h3>
-                <h4>Autonomous Driving Advanced Development Team (자율주행선행개발팀)</h4>
-                <p>
-                    Internship at Hyundai Mobis Autonomous Driving Advanced Development Team.
-                </p>
-            </div>
+            <div data-date="July 2019 – July 2019">
+                <h3>Hyundai Mobis</h3>
+                <h4>Autonomous Driving Advanced Development Team (자율주행선행개발팀)</h4>
+                <p>
+                    Internship at Hyundai Mobis Autonomous Driving Advanced Development Team.
+                </p>
+            </div>
 		
-            <div data-date="July 2018 – December 2018">
-                <h3>NAVER</h3>
-                <h4>CLOVA VISION - OCR</h4>
-                <p>
-                    Internship at Naver Clova Vision OCR team.
-                </p>
-            </div>
+            <div data-date="July 2018 – December 2018">
+                <h3>NAVER</h3>
+                <h4>CLOVA VISION - OCR</h4>
+                <p>
+                    Internship at Naver Clova Vision OCR team.
+                </p>
+            </div>
 
-            <div data-date="February 2014 – January 2016">
-                <h3>Military Service</h3>
-            </div>
+            <div data-date="February 2014 – January 2016">
+                <h3>Military Service</h3>
+            </div>
 		
-	    
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-	    
-        <div class="education-block">
-            <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
-            <span class="education-date">September 2022 - Current</span>
-            <h4>Ph.D student, Kim Jaechul Graduate School of AI</h4>
-	    <h5><a href="https://www.mlai-kaist.com/">Machine Learning and Artificial Intelligence (MLAI) Lab</a> under the supervision of Prof. Sung Ju Hwang.</h5>
-        </div>
-        <!-- End .education-block -->
-	    
-        <div class="education-block">
-            <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
-            <span class="education-date">March 2019 - February 2021</span>
-            <h4>Master Degree, Electrical Engineering, Division of Future Vehicle</h4>
-	    <h5><a href="https://siit.kaist.ac.kr/">Statistical Inference & Information Theory (siit) Lab</a> under the supervision of Prof. Junmo Kim.</h5>
-        </div>
-        <!-- End .education-block -->
-	    
-        <div class="education-block">
-            <h3>Inha University</h3>
-            <span class="education-date">March 2013 - February 2019</span>
-            <h4>Bachelor Degree, Information and Communication Engineering</h4>
-            <p>
-               Inha University, Information and Communication Engineering, Bachelor Degree.
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-    </div>
-    <!-- End #education -->
-		
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Publication</h2>
-        <div class="container">
-            <div class="row">
+	    
+        </div>
+    </div>
+        <div id="education">
+        <h2 class="heading">Education</h2>
+	    
+        <div class="education-block">
+            <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
+            <span class="education-date">September 2022 - Current</span>
+            <h4>Ph.D student, Kim Jaechul Graduate School of AI</h4>
+	    <h5><a href="https://www.mlai-kaist.com/">Machine Learning and Artificial Intelligence (MLAI) Lab</a> under the supervision of Prof. Sung Ju Hwang.</h5>
+        </div>
+            
+        <div class="education-block">
+            <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
+            <span class="education-date">March 2019 - February 2021</span>
+            <h4>Master Degree, Electrical Engineering, Division of Future Vehicle</h4>
+	    <h5><a href="https://siit.kaist.ac.kr/">Statistical Inference & Information Theory (siit) Lab</a> under the supervision of Prof. Junmo Kim.</h5>
+        </div>
+            
+        <div class="education-block">
+            <h3>Inha University</h3>
+            <span class="education-date">March 2013 - February 2019</span>
+            <h4>Bachelor Degree, Information and Communication Engineering</h4>
+            <p>
+               Inha University, Information and Communication Engineering, Bachelor Degree.
+            </p>
+        </div>
+            </div>
+        <div id="projects" class="background-alt">
+        <h2 class="heading">Publication</h2>
+        <div class="container">
+            <div class="row">
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>ZIM: Zero-Shot Image Matting for Anything</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Chanyong Shin, Joonhyun Jeong, Hyungsik Jung, Se-Yun Lee, Sewhan Chun, Dong-Hyun Hwang, Joonsang Yu
+			    <b>Beomyoung Kim</b>, Chanyong Shin, Joonhyun Jeong, Hyungsik Jung, Se-Yun Lee, Sewhan Chun, Dong-Hyun Hwang, Joonsang Yu
 			</p>
 			ICCV 2025 (Highlight) <a href="https://naver-ai.github.io/ZIM/">[project page]</a> <a href="https://arxiv.org/pdf/2411.00626">[paper]</a> <a href="https://github.com/naver-ai/ZIM">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
+		    </div>
+		    </div>
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>Towards Label-Efficient Human Matting: A Simple Baseline for Weakly Semi-Supervised Trimap-Free Human Matting</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Myeong Yeon Yi, Joonsang Yu, Young Joon Yoo, Sung Ju Hwang
+			    <b>Beomyoung Kim</b>, Myeong Yeon Yi, Joonsang Yu, Young Joon Yoo, Sung Ju Hwang
 			</p>
 			Arxiv Preprint <a href="https://arxiv.org/abs/2404.00921">[paper]</a> <a href="https://github.com/clovaai/WSSHM">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-	        <div class="project no-image">
-		    <div class="project-info">
+		    </div>
+		    </div>
+		    
+	        <div class="project no-image">
+		    <div class="project-info">
 			<h3>Rethinking Saliency-Guided Weakly-Supervised Semantic Segmentation</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Donghyeon Kim, Sung Ju Hwang
+			    <b>Beomyoung Kim</b>, Donghyeon Kim, Sung Ju Hwang
 			</p>
 			Arxiv Preprint <a href="https://arxiv.org/abs/2404.00918">[paper]</a> <a href="https://github.com/clovaai/WSSS-BED">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-	    	<div class="project no-image">
-		    <div class="project-info">
+		    </div>
+		    </div>
+		    
+	    	<div class="project no-image">
+		    <div class="project-info">
 			<h3>ECLIPSE: Efficient Continual Learning in Panoptic Segmentation with Visual Prompt Tuning</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Joonsang Yu, Sung Ju Hwang
+			    <b>Beomyoung Kim</b>, Joonsang Yu, Sung Ju Hwang
 			</p>
 			CVPR 2024 <a href="https://arxiv.org/abs/2403.20126">[paper]</a> <a href="https://github.com/clovaai/ECLIPSE">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
+		    </div>
+		    </div>
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>EResFD: Rediscovery of the Effectiveness of Standard Convolution for Lightweight Face Detection</h3>
 			<p>
-			    Joonhyun Jeong, <b>Beomyoung Kim</b>, Joonsang Yu, Youngjoon Yoo
+			    Joonhyun Jeong, <b>Beomyoung Kim</b>, Joonsang Yu, Youngjoon Yoo
 			</p>
 			WACV 2024 <a href="https://arxiv.org/abs/2204.01209">[paper]</a> <a href="https://github.com/clovaai/EResFD">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>   
-		    
+		    </div>
+		    </div>   
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>The Devil is in the Points: Weakly Semi-Supervised Instance Segmentation via Point-Guided Mask Representation</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Joonhyun Jeong, Dongyoon Han, Sung Ju Hwang
+			    <b>Beomyoung Kim</b>, Joonhyun Jeong, Dongyoon Han, Sung Ju Hwang
 			</p>
 			CVPR 2023 <a href="https://arxiv.org/abs/2303.15062">[paper]</a> <a href="https://github.com/clovaai/PointWSSIS">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>   
-		    
+		    </div>
+		    </div>   
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>Beyond Semantic to Instance Segmentation: Weakly-Supervised Instance Segmentation via Semantic Knowledge Transfer and Self-Refinement</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Youngjoon Yoo, Chaeeun Rhee, Junmo Kim
+			    <b>Beomyoung Kim</b>, Youngjoon Yoo, Chaeeun Rhee, Junmo Kim
 			</p>
 			CVPR 2022 <a href="https://arxiv.org/abs/2109.09477">[paper]</a> <a href="https://github.com/clovaai/BESTIE">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>	
-		    
+		    </div>
+		    </div>	
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>Learning Features with Parameter-Free Layers</h3>
 			<p>
-			    Dongyoon Han, Youngjoon Yoo, <b>Beomyoung Kim</b>, Byeongho Heo
+			    Dongyoon Han, Youngjoon Yoo, <b>Beomyoung Kim</b>, Byeongho Heo
 			</p>
 			ICLR 2022 <a href="https://openreview.net/pdf?id=bCrdi4iVvv">[paper]</a> <a href="https://github.com/naver-ai/PfLayer">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>    
-		    		
+		    </div>
+		    </div>    
+		    		
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>TricubeNet: 2D Kernel-Based Object Representation for Weakly-Occluded Oriented Object Detection</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Janghyeon Lee, Sihaeng Lee, Doyeon Kim, and Junmo Kim
+			    <b>Beomyoung Kim</b>, Janghyeon Lee, Sihaeng Lee, Doyeon Kim, and Junmo Kim
 			</p>
 			WACV 2022 <a href="https://arxiv.org/abs/2104.11435">[paper]</a> <a href="https://github.com/qjadud1994/TricubeNet">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>    
-		    
+		    </div>
+		    </div>    
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>SSUL: Semantic Segmentation with Unknown Label for Exemplar-based Class-Incremental Learning</h3>
 			<p>
-			    Sungmin Cha*, <b>Beomyoung Kim*</b>, Youngjoon Yoo, and Taesup Moon (* equal contribution)
+			    Sungmin Cha*, <b>Beomyoung Kim*</b>, Youngjoon Yoo, and Taesup Moon (* equal contribution)
 			</p>
 			NeurIPS 2021 <a href="https://arxiv.org/abs/2106.11562">[paper]</a> <a href="https://github.com/clovaai/SSUL">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>		
-		    
+		    </div>
+		    </div>		
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>Discriminative Region Suppression for Weakly-Supervised Semantic Segmentation</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Sangeun Han, and Junmo Kim
+			    <b>Beomyoung Kim</b>, Sangeun Han, and Junmo Kim
 			</p>
 			AAAI 2021 <a href="https://arxiv.org/abs/2103.07246">[paper]</a> <a href="https://github.com/qjadud1994/DRS">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
+		    </div>
+		    </div>
 
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>3D Point Cloud Upsampling and Colorization using GAN</h3>
 			<p>
-			    <b>Beomyoung Kim</b>, Sangeun Han, Eojindl Yi, and Junmo Kim
+			    <b>Beomyoung Kim</b>, Sangeun Han, Eojindl Yi, and Junmo Kim
 			</p>
 			MIWAI 2021 <a href="https://link.springer.com/chapter/10.1007/978-3-030-80253-0_1">[paper]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
+		    </div>
+		    </div>
+		    
 		<div class="project no-image">
-		    <div class="project-info">
+		    <div class="project-info">
 			<h3>Fully automated valet parking system based on infrastructure sensing</h3>
 			<p>
-			    Hyunjee Ryu, <b>Beomyoung Kim</b>, Heecheol Yoo, and Jungwon Lee
+			    Hyunjee Ryu, <b>Beomyoung Kim</b>, Heecheol Yoo, and Jungwon Lee
 			</p>
 			RiTA 2020 <a href="https://link.springer.com/chapter/10.1007/978-981-16-4803-8_3">[paper]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
+		    </div>
+		    </div>
 		
-		    
-                <!-- End .project -->
-            </div>
-        </div>
-    </div>
+		    
+                            </div>
+        </div>
+    </div>
 
-    <div class="optional-section">
-    <h2 class="heading">Academic Activity</h2>
-	    <div class="optional-section-block">
+    <div class="optional-section">
+    <h2 class="heading">Academic Activity</h2>
+	    <div class="optional-section-block">
 		<h3>Conference Reviewer</h3>
 		<ul>
 			<li>
 			<h3>CVPR 2025, NeurIPS 2025, ICCV 2025, TMLR</h3>
-		    </li>
-		    <li>
+		    </li>
+		    <li>
 			<h3>CVPR 2024, NeurIPS 2024, ICLR 2024, ECCV 2024, AAAI 2024</h3>
-		    </li>
-		    <li>
+		    </li>
+		    <li>
 			<h3>CVPR 2023, NeurIPS 2023, ICCV 2023, WACV 2023</h3>
-		    </li>
+		    </li>
 		</ul>
-	    </div>
-	    <!-- End .optional-section-block -->
-</div>
-<!-- End .optional-section -->
-    <!-- End #projects -->
+	    </div>
 
-    <div id="skills" class="background-alt">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>Pytorch</li>
-            <li>Tensorflow</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C++</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/qjadud1994@gmail.com">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2020 YOUR NAME
-                    </p>
+		<div class="optional-section-block">
+		<h3>Invited Talk</h3>
+		<ul>
+			<li class="talk-item">
+			    <h3>[2025] [센텀디지털위크 2025] AI 연구원이 들려주는 생존 스토리 
+                    <a href="https://dan.naver.com/24/sessions/597">[link]</a> 
+                    <a class="gallery-link">[material]</a>
+                </h3>
+                <div class="hidden-gallery">
+                    <a href="images/cw_1.jpg"></a>
+                    <a href="images/cw_2.png"></a>
                 </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
+		    </li>
+			<li class="talk-item">
+			    <h3>[2024] [팀네이버 컨퍼런스 DAN 24] CLOVA-X 이미지 편집: AI가 선사하는 픽셀 마법의 세계 
+                    <a href="https://dan.naver.com/24/sessions/597">[link]</a>
+                    <a class="gallery-link">[material]</a>
+                </h3>
+                <div class="hidden-gallery">
+                    <a href="images/dan24.png"></a>
                 </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/qjadud1994" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
+		    </li>
+			<li class="talk-item">
+			    <h3>[2022] 진학사 캐치 커리어콘: AI 리서치 엔지니어 신입사원 취업 A to Z, 김범영 멘토 (네이버 클로바 AI 리서치 엔지니어)
+                    <a class="gallery-link">[material]</a>
+                </h3>
+                <div class="hidden-gallery">
+                    <a href="images/career.png"></a>
                 </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
+		    </li>
+		    <li>
+			<h3>[2022] Inha University. Weakly-Supervised Instance Segmentation (CVPR 2022), invited by Prof. Rhee Chae Eun</h3>
+		    </li>
+		    <li class="talk-item">
+			    <h3>[2021] NeurIPS 2021 Social: ML in Republic of Korea. SSUL: Semantic Segmentation with Unknown Label for Exemplar-based Class-Incremental Learning
+                    <a class="gallery-link">[material]</a>
+                </h3>
+                <div class="hidden-gallery">
+                    <a href="images/ml_in_korea.png"></a>
+                </div>
+		    </li>
+		</ul>
+	    </div>
+	    </div>
+        <div id="skills" class="background-alt">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Pytorch</li>
+            <li>Tensorflow</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>C++</li>
+        </ul>
+    </div>
+        <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/qjadud1994@gmail.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+            </div>
+        <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2020 YOUR NAME
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/qjadud1994" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha512-jEJ0GMasRpIOrtGVHzFAEIiEczYgoIh/0f7PJamCzOF4IFqn2lKlvNI1oG2QIFLCo3GevHZJClKupO/S0r3GRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js" integrity="sha512-VRpF3klhyETTcpLjbNfOuC52wMvY/XBf99i2f/jL1Pz2L2U+52+s5Tdq8p9WoH5LgGgH3d/anEa1jK6GjL5e/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script type="text/javascript">
+        // Find all list items that are designated as talk items
+        const talkItems = document.querySelectorAll('.talk-item');
+
+        talkItems.forEach(item => {
+            const galleryContainer = item.querySelector('.hidden-gallery');
+            const galleryLink = item.querySelector('.gallery-link');
+
+            if (galleryContainer && galleryLink) {
+                // Initialize the gallery for this specific talk item
+                const galleryInstance = lightGallery(galleryContainer, {
+                    plugins: [lgThumbnail],
+                    speed: 500,
+                });
+
+                // Add a click listener to the corresponding [material] link
+                galleryLink.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent link from navigating
+                    galleryInstance.openGallery();
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
