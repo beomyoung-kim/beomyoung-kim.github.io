@@ -1,481 +1,338 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
-<style>
-	.circular-img {
-	    width: 200px; /* Adjust the width of the circular image */
-	    height: 200px; /* Adjust the height of the circular image */
-	    border-radius: 50%; /* Make the image circular */
-	    overflow: hidden; /* Hide the parts of the image outside the border */
-	    margin: 20px auto; /* Center align the circular image and add space around it */
-	    float: left;
-	}
-	
-	.circular-img img {
-	    width: 100%; /* Make the image fill the circular container */
-	    height: auto; /* Maintain aspect ratio */
-	}
-</style>
-	
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beomyoung Kim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --surf:#fafbfc; --ink:#0f1320; --muted:#5a6473; --faint:#919aa8;
+    --line:#eceef2; --c1:#4f46e5; --c2:#06b6d4;
+    --grad:linear-gradient(90deg,#4f46e5,#06b6d4);
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--c1);text-decoration:none}a:hover{text-decoration:underline}
+  .grotesk{font-family:'Space Grotesk',sans-serif}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{font-family:'Space Grotesk';font-weight:700;font-size:16px;letter-spacing:-.01em}
+  nav ul{display:flex;gap:22px;list-style:none;align-items:center}
+  nav a{color:var(--muted);font-size:14px;font-weight:500}nav a:hover{color:var(--ink);text-decoration:none}
+  nav .cv{background:var(--ink);color:#fff;padding:7px 15px;border-radius:9px}nav .cv:hover{text-decoration:none;background:var(--c1)}
+  .menu-btn{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:var(--ink)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 232px;gap:46px;align-items:center;padding:62px 0 40px}
+  .hero .eyebrow{font-family:'JetBrains Mono';font-size:13px;letter-spacing:.04em;color:var(--c1);margin-bottom:16px}
+  .hero h1{font-family:'Space Grotesk';font-size:56px;font-weight:700;letter-spacing:-.03em;line-height:1.02;margin-bottom:14px}
+  .hero .kname{font-family:'JetBrains Mono';font-size:22px;color:var(--faint);font-weight:400;letter-spacing:.02em}
+  .hero .role{font-size:18px;color:var(--muted);margin-bottom:8px}
+  .hero .role b{color:var(--ink);font-weight:600}
+  .typed{font-family:'JetBrains Mono';font-size:15.5px;color:var(--c1);height:26px;margin-bottom:18px}
+  .typed::after{content:'▋';animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+  .hero p.lead{font-size:16px;color:var(--muted);max-width:600px;margin-bottom:22px}
+  .hero p.lead b{color:var(--ink);font-weight:600}
+  .hero-photo{width:232px;height:232px;border-radius:22px;object-fit:cover;border:1px solid var(--line);box-shadow:0 20px 48px rgba(20,30,80,.16);justify-self:center}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn{padding:10px 18px;border-radius:10px;font-weight:600;font-size:14px}
+  .btn-p{background:var(--grad);color:#fff}.btn-p:hover{text-decoration:none;filter:brightness(1.08)}
+  .btn-g{border:1px solid var(--line);color:var(--ink);background:#fff}.btn-g:hover{text-decoration:none;border-color:var(--c1);color:var(--c1)}
+  .linkrow{margin-top:16px;font-size:14px;color:var(--faint)}
+  .linkrow a{color:var(--muted);font-weight:500}.linkrow a:hover{color:var(--c1)}.linkrow .sep{margin:0 8px;color:var(--line)}
+  .banner{display:inline-flex;gap:8px;align-items:center;margin-top:18px;background:#ecfdf3;border:1px solid #bbf0cf;color:#0a7d3c;font-size:13.5px;font-weight:500;padding:7px 14px;border-radius:20px}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 8px}
+  .stat{border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center;background:var(--surf)}
+  .stat .n{font-family:'Space Grotesk';font-size:30px;font-weight:700}
+  .stat .l{font-size:12.5px;color:var(--faint);margin-top:2px}
+
+  section{padding:42px 0;border-top:1px solid var(--line)}
+  .eyebrow2{font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:.04em;color:var(--c2);text-transform:uppercase}
+  h2.h{font-family:'Space Grotesk';font-size:27px;font-weight:600;letter-spacing:-.02em;margin:6px 0 22px}
+
+  .themes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tcard{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--surf);transition:.18s}
+  .tcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,30,80,.07);border-color:rgba(79,70,229,.3)}
+  .tcard h3{font-family:'Space Grotesk';font-size:16px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .tcard .now{font-family:'JetBrains Mono';font-size:10px;font-weight:500;color:#0a7d3c;background:#e6f6ec;padding:2px 7px;border-radius:5px;letter-spacing:.03em}
+  .tcard p{font-size:14px;color:var(--muted);line-height:1.5}
+  .tcard .ex{font-size:12.5px;color:var(--faint);margin-top:8px}
+
+  /* news */
+  .news .n{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .news .n:last-child{border:0}
+  .news .d{font-family:'JetBrains Mono';font-size:12.5px;color:var(--c2);padding-top:2px}
+  .news b{font-weight:600}
+
+  /* publications — text only */
+  .pub{padding:16px 0;border-bottom:1px solid var(--line)}
+  .pub:last-child{border:0}
+  .pub .vn{font-family:'JetBrains Mono';font-size:12.5px;color:var(--c1);font-weight:500;margin-bottom:4px}
+  .pub .vn .hl{color:#b25e00}
+  .pub h3{font-size:17px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+  .pub .au{font-size:14px;color:var(--muted);margin:4px 0 6px}.pub .au b{color:var(--ink);font-weight:600}
+  .pub .ln{font-size:13px}.pub .ln a{margin-right:13px;font-weight:500}
+  .pub details{display:inline}.pub summary{display:inline;cursor:pointer;color:var(--c1);font-weight:500;list-style:none}
+  .pub pre{font-family:'JetBrains Mono';font-size:11.5px;background:var(--surf);border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:8px;white-space:pre-wrap;color:#444;line-height:1.5}
+  .yr{font-family:'JetBrains Mono';font-size:12px;color:var(--faint);font-weight:500;margin:16px 0 0}
+  .ur{display:inline-block;font-family:'JetBrains Mono';font-size:10.5px;font-weight:600;letter-spacing:.07em;color:#b45309;background:#fff7ed;border:1px solid #fed7aa;padding:3px 9px;border-radius:6px;text-transform:uppercase}
+  .ur-desc{font-size:15.5px;color:var(--ink);margin-top:8px;line-height:1.45}
+
+  .impact li{list-style:none;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--muted)}
+  .impact li:last-child{border:0}.impact b{color:var(--ink);font-weight:600}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .item{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}
+  .item:last-child{border:0}
+  .item .logo{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:#fff;padding:5px;object-fit:contain;flex:none}
+  .item .body{flex:1}
+  .item .w{font-family:'JetBrains Mono';color:var(--faint);font-size:12px;flex:none;padding-top:2px;white-space:nowrap}
+  .item .t{font-weight:600;font-size:15px}.item .s{color:var(--muted);font-size:13.5px}
+  .subhead{font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--c1);font-weight:500;margin-bottom:10px}
+
+  /* service rows */
+  .svc-rows .r{display:grid;grid-template-columns:60px 1fr;gap:14px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .svc-rows .r:last-child{border:0}
+  .svc-rows .y{font-family:'JetBrains Mono';font-size:13px;color:var(--c1);font-weight:500}
+  .svc-rows .v{color:var(--muted)}
+
+  /* talks grid */
+  .talks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .talk{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surf);transition:.18s;display:flex;flex-direction:column}
+  .talk:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,30,80,.08);border-color:rgba(79,70,229,.3)}
+  .talk .thumb{width:100%;height:152px;object-fit:cover;display:block;border-bottom:1px solid var(--line);background:#0f1320}
+  .talk .ph{width:100%;height:152px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Space Grotesk';font-weight:600;font-size:18px;background:linear-gradient(135deg,#4f46e5,#06b6d4);border-bottom:1px solid var(--line)}
+  .talk .tb{padding:14px;flex:1;display:flex;flex-direction:column}
+  .talk .yr2{font-family:'JetBrains Mono';font-size:12px;color:var(--c1);font-weight:500}
+  .talk h4{font-size:15px;font-weight:600;margin:4px 0 5px;line-height:1.3}
+  .talk p{font-size:13px;color:var(--muted);flex:1}
+  .talk .lk{font-size:12.5px;font-weight:500;margin-top:8px}
+
+  footer{border-top:1px solid var(--line);text-align:center;padding:30px 0;color:var(--faint);font-size:13px}
+
+  @media(max-width:720px){
+    .hero{grid-template-columns:1fr;gap:26px}.hero h1{font-size:40px}
+    .hero-photo{width:150px;height:150px;justify-self:start;order:-1}
+    .stats{grid-template-columns:repeat(2,1fr)}.themes,.two,.talks{grid-template-columns:1fr}
+    nav ul{display:none}.menu-btn{display:block}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:14px 26px;gap:12px;border-bottom:1px solid var(--line)}
+  }
+</style>
 </head>
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+<nav id="nav">
+  <div class="wrap">
+    <span class="brand">Beomyoung Kim</span>
+    <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#pubs">Publications</a></li>
+      <li><a href="#xp">Experience</a></li>
+      <li><a class="cv" href="cv.html">CV ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-main">
+      <div class="eyebrow">Computer Vision · Multimodal AI · Vision-Language Models</div>
+      <h1 class="grotesk">Beomyoung <span class="grad-text">Kim</span> <span class="kname">김범영</span></h1>
+      <p class="role"><b>AI Research Engineer</b>, NAVER Cloud (Image Vision)</p>
+      <div class="typed mono" id="typed"></div>
+      <p class="lead">I'm an AI Research Engineer at NAVER on a mission to build AI that truly understands the visual world. My journey began in core <b>visual recognition</b> — segmentation, detection, and matting — with <b>13+ papers</b> at CVPR, ICCV, NeurIPS, ICLR and AAAI (<span data-cite="total">570</span> citations, h-index <span data-cite="hindex">9</span>). I'm now extending that perception expertise into <b>multimodal &amp; vision-language models</b> — perception-grounded VLMs and visual reasoning agents that don't just see, but reason and act. My north star: research that ships — turning frontier ideas into products used by millions. I'm also pursuing my Ph.D. at KAIST alongside full-time research at NAVER.</p>
+      <div class="cta">
+        <a class="btn btn-p" href="cv.html">View CV</a>
+        <a class="btn btn-g" href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ" target="_blank">Google Scholar</a>
+        <a class="btn btn-g" href="https://github.com/qjadud1994" target="_blank">GitHub</a>
+      </div>
+      <div class="linkrow">
+        <a href="mailto:beomyoung.kim@navercorp.com">Email</a><span class="sep">·</span>
+        <a href="https://dblp.org/pid/264/6398.html" target="_blank">DBLP</a><span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/beomyoung-kim" target="_blank">LinkedIn</a><span class="sep">·</span>
+        <span>📍 Seoul, Korea</span>
+      </div>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Publication</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
+    <img class="hero-photo" src="images/pic_beom.jpg" alt="Beomyoung Kim">
+  </header>
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Beomyoung Kim</h1>
-            <h2>AI Research Engineer</h2>
-            <a href="https://github.com/beomyoung-kim/beomyoung-kim.github.io/raw/master/images/CV_beomyoung_kim.pdf" class="btn-rounded-white">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
+  <section style="border-top:0;padding-top:0">
+    <!-- metrics are static snapshots (2026-06); refresh periodically from Scholar -->
+    <div class="stats">
+      <div class="stat"><div class="n grad-text">13+</div><div class="l">Publications</div></div>
+      <div class="stat"><div class="n grad-text" data-cite="total">570</div><div class="l">Citations</div></div>
+      <div class="stat"><div class="n grad-text" data-cite="hindex">9</div><div class="l">h-index</div></div>
+      <div class="stat"><div class="n grad-text">5+</div><div class="l">Years @ NAVER</div></div>
     </div>
-    <!-- End #lead -->
+  </section>
 
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-		    <br>
-		    <div class="circular-img">
-        		<img src="https://github.com/beomyoung-kim/beomyoung-kim.github.io/raw/master/images/pic_beom.jpg" alt="Circular Image">
-		    </div>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                        I am an AI research engineer at NAVER and a Ph.D. student at the Graduate School of AI at KAIST, under the guidance of Professor Sung Ju Hwang in MLAI Lab. My primary research interests lie in advancing the field of comprehensive image recognition techniques in real-world scenarios, particularly focusing on image segmentation and object detection.
-		    </p><br>
-		    <p>
-			    In my research journey, I am deeply involved in exploring cutting-edge technologies such as vision foundation models like SAM, as well as developing multi-modal vision models. Additionally, I am actively engaged in pioneering label-efficient segmentation methods, including weakly or semi-supervised image segmentation. Another area of my focus is continual learning in image segmentation, where I strive to push the boundaries of knowledge and innovation.
-		    </p><br>
-		    <p>
-			    Through my work, I aspire to contribute significantly to the advancement of artificial intelligence and its applications in solving real-world challenges. I am driven by a passion for innovation and a relentless pursuit of excellence in research and development.
-		    </p><br>
-
-		    <div class="text-center">
-		    	<a href="https://github.com/qjadud1994" target="_blank">
-			        <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat" alt="GitHub Badge">
-		    	</a>
-			<a href="https://www.linkedin.com/in/beomyoung-kim" target="_blank">
-			        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=flat" alt="LinkedIn Badge">
-			</a>
-		        <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ&hl=ko" target="_blank">
-				<img src="https://img.shields.io/badge/Google%20Scholar-4285F4?logo=googlescholar&logoColor=fff&style=flat" alt="Google Scholar Badge">
-		        </a>
-    		    </div>
-                </div>
-            </div>
-        </div>
+  <section id="research">
+    <div class="eyebrow2">Research</div>
+    <h2 class="h grotesk">What I work on</h2>
+    <div class="themes">
+      <div class="tcard"><h3>Multimodal &amp; Vision-Language Models <span class="now">NOW @ NAVER</span></h3><p>Extending my visual-recognition expertise to vision-language models — multimodal LLMs/VLMs with fine-grained visual perception and grounding, and visual reasoning agents that perceive, localize, and reason over images.</p></div>
+      <div class="tcard"><h3>Vision Foundation Models &amp; Matting</h3><p>Promptable, zero-shot segmentation &amp; matting for anything; label-efficient human matting.</p><p class="ex">ZIM (ICCV'25 Highlight) · WSSHM</p></div>
+      <div class="tcard"><h3>Label-Efficient Segmentation</h3><p>Weakly- and semi-supervised semantic &amp; instance segmentation from cheap supervision.</p><p class="ex">PointWSSIS · BESTIE · DRS · WSSS-BED</p></div>
+      <div class="tcard"><h3>Continual &amp; Efficient Learning</h3><p>Class-incremental and panoptic continual segmentation; lightweight, efficient models.</p><p class="ex">ECLIPSE · SSUL · EResFD · PfLayer</p></div>
     </div>
-    <!-- End #about -->
+  </section>
 
-  <div class="optional-section">
-    <h2 class="heading">News</h2>
-
-    <div class="optional-section-block">
-    	<ul>
-		<h3>🔥Jun. 2025: One paper accepted to ICCV 2025</h3>	
-        	<h3>🔥Mar. 2024: One paper accepted to CVPR 2024</h3>	
-		<h3>🔥Nov. 2023: One paper accepted to WACV 2024</h3>
-		<h3>🔥Feb. 2023: One paper accepted to CVPR 2023</h3>
-		<h3>🔥Mar. 2022: One paper accepted to CVPR 2022</h3>
-    	</ul>
+  <section id="news">
+    <div class="eyebrow2">Updates</div>
+    <h2 class="h grotesk">News</h2>
+    <div class="news">
+      <div class="n"><span class="d">Jul 2026</span><span>✈️ Attending <b>ICML 2026</b> in person — reach out to connect.</span></div>
+      <div class="n"><span class="d">Jun 2025</span><span>🔥 <b>ZIM</b> accepted to <b>ICCV 2025</b> as a <b>Highlight</b>.</span></div>
+      <div class="n"><span class="d">Oct 2024</span><span>🎤 Invited talk at <b>TEAM NAVER DAN 24</b> — CLOVA-X image editing.</span></div>
+      <div class="n"><span class="d">Mar 2024</span><span>🔥 <b>ECLIPSE</b> accepted to <b>CVPR 2024</b>.</span></div>
+      <div class="n"><span class="d">Feb 2023</span><span>🔥 <b>PointWSSIS</b> accepted to <b>CVPR 2023</b>.</span></div>
     </div>
-    <!-- End .optional-section-block -->
-	
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-	    <div data-date="January 2021 – current">
-                <h3>NAVER</h3>
-                <h4>CLOVA VISION - Image Vision</h4>
-                <p>
-                    AI Research Engineer at Naver Clova Vision Image-Vision team.
-                </p>
-            </div>
-		
-            <div data-date="July 2020 – December 2020">
-                <h3>NAVER</h3>
-                <h4>CLOVA VISUAL AI - FACE</h4>
-                <p>
-                    Internship at Naver Clova Visual AI FACE team.
-                </p>
-            </div>
-		
-            <div data-date="July 2019 – July 2019">
-                <h3>Hyundai Mobis</h3>
-                <h4>Autonomous Driving Advanced Development Team (자율주행선행개발팀)</h4>
-                <p>
-                    Internship at Hyundai Mobis Autonomous Driving Advanced Development Team.
-                </p>
-            </div>
-		
-            <div data-date="July 2018 – December 2018">
-                <h3>NAVER</h3>
-                <h4>CLOVA VISION - OCR</h4>
-                <p>
-                    Internship at Naver Clova Vision OCR team.
-                </p>
-            </div>
+  </section>
 
-            <div data-date="February 2014 – January 2016">
-                <h3>Military Service</h3>
-            </div>
-		
-	    
-        </div>
-    </div>
-    <!-- End #experience -->
+  <section id="pubs">
+    <div class="eyebrow2">Peer-reviewed · 13+ papers</div>
+    <h2 class="h grotesk">Selected Publications</h2>
 
-    <div id="education">
-        <h2 class="heading">Education</h2>
-	    
-        <div class="education-block">
-            <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
-            <span class="education-date">September 2022 - Current</span>
-            <h4>Ph.D student, Kim Jaechul Graduate School of AI</h4>
-	    <h5><a href="https://www.mlai-kaist.com/">Machine Learning and Artificial Intelligence (MLAI) Lab</a> under the supervision of Prof. Sung Ju Hwang.</h5>
-        </div>
-        <!-- End .education-block -->
-	    
-        <div class="education-block">
-            <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
-            <span class="education-date">March 2019 - February 2021</span>
-            <h4>Master Degree, Electrical Engineering, Division of Future Vehicle</h4>
-	    <h5><a href="https://siit.kaist.ac.kr/">Statistical Inference & Information Theory (siit) Lab</a> under the supervision of Prof. Junmo Kim.</h5>
-        </div>
-        <!-- End .education-block -->
-	    
-        <div class="education-block">
-            <h3>Inha University</h3>
-            <span class="education-date">March 2013 - February 2019</span>
-            <h4>Bachelor Degree, Information and Communication Engineering</h4>
-            <p>
-               Inha University, Information and Communication Engineering, Bachelor Degree.
-            </p>
-        </div>
-        <!-- End .education-block -->
+    <div class="yr">Under review</div>
+    <div class="pub"><div class="vn"><span class="ur">Under review</span> · NeurIPS 2026</div><p class="ur-desc">A diagnostic framework for 3D spatial reasoning that turns silent perception failures in visual program synthesis into typed diagnoses, driving targeted program repair to rival frontier VLMs without task-specific training.</p></div>
+    <div class="pub"><div class="vn"><span class="ur">Under review</span> · ECCV 2026</div><p class="ur-desc">A segmentation mask-refinement framework that synthesizes realistic, semantic-aware errors via adversarial perturbation and corrects them with contrastive learning, consistently improving state-of-the-art segmentation models.</p></div>
 
-    </div>
-    <!-- End #education -->
-		
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Publication</h2>
-        <div class="container">
-            <div class="row">
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>ZIM: Zero-Shot Image Matting for Anything</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Chanyong Shin, Joonhyun Jeong, Hyungsik Jung, Se-Yun Lee, Sewhan Chun, Dong-Hyun Hwang, Joonsang Yu
-			</p>
-			ICCV 2025 (Highlight) <a href="https://naver-ai.github.io/ZIM/">[project page]</a> <a href="https://arxiv.org/pdf/2411.00626">[paper]</a> <a href="https://github.com/naver-ai/ZIM">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>Towards Label-Efficient Human Matting: A Simple Baseline for Weakly Semi-Supervised Trimap-Free Human Matting</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Myeong Yeon Yi, Joonsang Yu, Young Joon Yoo, Sung Ju Hwang
-			</p>
-			Arxiv Preprint <a href="https://arxiv.org/abs/2404.00921">[paper]</a> <a href="https://github.com/clovaai/WSSHM">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-	        <div class="project no-image">
-		    <div class="project-info">
-			<h3>Rethinking Saliency-Guided Weakly-Supervised Semantic Segmentation</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Donghyeon Kim, Sung Ju Hwang
-			</p>
-			Arxiv Preprint <a href="https://arxiv.org/abs/2404.00918">[paper]</a> <a href="https://github.com/clovaai/WSSS-BED">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-	    	<div class="project no-image">
-		    <div class="project-info">
-			<h3>ECLIPSE: Efficient Continual Learning in Panoptic Segmentation with Visual Prompt Tuning</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Joonsang Yu, Sung Ju Hwang
-			</p>
-			CVPR 2024 <a href="https://arxiv.org/abs/2403.20126">[paper]</a> <a href="https://github.com/clovaai/ECLIPSE">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>EResFD: Rediscovery of the Effectiveness of Standard Convolution for Lightweight Face Detection</h3>
-			<p>
-			    Joonhyun Jeong, <b>Beomyoung Kim</b>, Joonsang Yu, Youngjoon Yoo
-			</p>
-			WACV 2024 <a href="https://arxiv.org/abs/2204.01209">[paper]</a> <a href="https://github.com/clovaai/EResFD">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>   
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>The Devil is in the Points: Weakly Semi-Supervised Instance Segmentation via Point-Guided Mask Representation</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Joonhyun Jeong, Dongyoon Han, Sung Ju Hwang
-			</p>
-			CVPR 2023 <a href="https://arxiv.org/abs/2303.15062">[paper]</a> <a href="https://github.com/clovaai/PointWSSIS">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>   
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>Beyond Semantic to Instance Segmentation: Weakly-Supervised Instance Segmentation via Semantic Knowledge Transfer and Self-Refinement</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Youngjoon Yoo, Chaeeun Rhee, Junmo Kim
-			</p>
-			CVPR 2022 <a href="https://arxiv.org/abs/2109.09477">[paper]</a> <a href="https://github.com/clovaai/BESTIE">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>	
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>Learning Features with Parameter-Free Layers</h3>
-			<p>
-			    Dongyoon Han, Youngjoon Yoo, <b>Beomyoung Kim</b>, Byeongho Heo
-			</p>
-			ICLR 2022 <a href="https://openreview.net/pdf?id=bCrdi4iVvv">[paper]</a> <a href="https://github.com/naver-ai/PfLayer">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>    
-		    		
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>TricubeNet: 2D Kernel-Based Object Representation for Weakly-Occluded Oriented Object Detection</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Janghyeon Lee, Sihaeng Lee, Doyeon Kim, and Junmo Kim
-			</p>
-			WACV 2022 <a href="https://arxiv.org/abs/2104.11435">[paper]</a> <a href="https://github.com/qjadud1994/TricubeNet">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>    
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>SSUL: Semantic Segmentation with Unknown Label for Exemplar-based Class-Incremental Learning</h3>
-			<p>
-			    Sungmin Cha*, <b>Beomyoung Kim*</b>, Youngjoon Yoo, and Taesup Moon (* equal contribution)
-			</p>
-			NeurIPS 2021 <a href="https://arxiv.org/abs/2106.11562">[paper]</a> <a href="https://github.com/clovaai/SSUL">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>		
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>Discriminative Region Suppression for Weakly-Supervised Semantic Segmentation</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Sangeun Han, and Junmo Kim
-			</p>
-			AAAI 2021 <a href="https://arxiv.org/abs/2103.07246">[paper]</a> <a href="https://github.com/qjadud1994/DRS">[code]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>3D Point Cloud Upsampling and Colorization using GAN</h3>
-			<p>
-			    <b>Beomyoung Kim</b>, Sangeun Han, Eojindl Yi, and Junmo Kim
-			</p>
-			MIWAI 2021 <a href="https://link.springer.com/chapter/10.1007/978-3-030-80253-0_1">[paper]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		    
-		<div class="project no-image">
-		    <div class="project-info">
-			<h3>Fully automated valet parking system based on infrastructure sensing</h3>
-			<p>
-			    Hyunjee Ryu, <b>Beomyoung Kim</b>, Heecheol Yoo, and Jungwon Lee
-			</p>
-			RiTA 2020 <a href="https://link.springer.com/chapter/10.1007/978-981-16-4803-8_3">[paper]</a>
-		    </div>
-		    <!-- End .project-info -->
-		</div>
-		
-		    
-                <!-- End .project -->
-            </div>
-        </div>
+    <div class="yr">2025</div>
+    <div class="pub">
+      <div class="vn">ICCV 2025 <span class="hl">· ★ Highlight</span></div>
+      <h3>ZIM: Zero-Shot Image Matting for Anything</h3>
+      <div class="au"><b>Beomyoung Kim</b>, Chanyong Shin, Joonhyun Jeong, Hyungsik Jung, Se-Yun Lee, Sewhan Chun, Dong-Hyun Hwang, Joonsang Yu</div>
+      <div class="ln"><a href="https://naver-ai.github.io/ZIM/" target="_blank">project</a><a href="https://arxiv.org/pdf/2411.00626" target="_blank">arXiv</a><a href="https://github.com/naver-ai/ZIM" target="_blank">code</a><details><summary>bibtex</summary><pre>@inproceedings{kim2025zim,
+  title={ZIM: Zero-Shot Image Matting for Anything},
+  author={Kim, Beomyoung and others},
+  booktitle={ICCV}, year={2025}}</pre></details></div>
     </div>
 
-    <div class="optional-section">
-    <h2 class="heading">Academic Activity</h2>
-	    <div class="optional-section-block">
-		<h3>Conference Reviewer</h3>
-		<ul>
-			<li>
-			<h3>CVPR 2026, ECCV 2026, TPAMI, NeurIPS 2026, ICLR 2026</h3>
-		    </li>
-			<li>
-			<h3>CVPR 2025, NeurIPS 2025, ICCV 2025, TMLR, ICLR 2025</h3>
-		    </li>
-		    <li>
-			<h3>CVPR 2024, NeurIPS 2024, ICLR 2024, ECCV 2024, AAAI 2024</h3>
-		    </li>
-		    <li>
-			<h3>CVPR 2023, NeurIPS 2023, ICCV 2023, WACV 2023</h3>
-		    </li>
-		</ul>
-	    </div>
+    <div class="yr">2024</div>
+    <div class="pub"><div class="vn">arXiv preprint</div><h3>Towards Label-Efficient Human Matting</h3><div class="au"><b>Beomyoung Kim</b>, Myeong Yeon Yi, Joonsang Yu, Young Joon Yoo, Sung Ju Hwang</div><div class="ln"><a href="https://arxiv.org/abs/2404.00921" target="_blank">arXiv</a><a href="https://github.com/clovaai/WSSHM" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">arXiv preprint</div><h3>Rethinking Saliency-Guided Weakly-Supervised Semantic Segmentation</h3><div class="au"><b>Beomyoung Kim</b>, Donghyeon Kim, Sung Ju Hwang</div><div class="ln"><a href="https://arxiv.org/abs/2404.00918" target="_blank">arXiv</a><a href="https://github.com/clovaai/WSSS-BED" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">CVPR 2024</div><h3>ECLIPSE: Efficient Continual Learning in Panoptic Segmentation with Visual Prompt Tuning</h3><div class="au"><b>Beomyoung Kim</b>, Joonsang Yu, Sung Ju Hwang</div><div class="ln"><a href="https://arxiv.org/abs/2403.20126" target="_blank">arXiv</a><a href="https://github.com/clovaai/ECLIPSE" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">WACV 2024</div><h3>EResFD: Rediscovery of the Effectiveness of Standard Convolution for Lightweight Face Detection</h3><div class="au">Joonhyun Jeong, <b>Beomyoung Kim</b>, Joonsang Yu, Youngjoon Yoo</div><div class="ln"><a href="https://arxiv.org/abs/2204.01209" target="_blank">arXiv</a><a href="https://github.com/clovaai/EResFD" target="_blank">code</a></div></div>
 
-		<div class="optional-section-block">
-		<h3>Invited Talk</h3>
-		<ul>
-			<li>
-			    <h3>[2025] [센텀디지털위크 2025] AI 연구원이 들려주는 생존 스토리</h3>
-		    </li>
-			<li>
-			    <h3>[2024] [팀네이버 컨퍼런스 DAN 24] CLOVA-X 이미지 편집: AI가 선사하는 픽셀 마법의 세계 <a href="https://dan.naver.com/24/sessions/597">[link]</a></h3>
-		    </li>
-			<li>
-			    <h3>[2022] 진학사 캐치 커리어콘: AI 리서치 엔지니어 신입사원 취업 A to Z, 김범영 멘토 (네이버 클로바 AI 리서치 엔지니어)</h3>
-		    </li>
-		    <li>
-				<h3>[2022] Inha University. Weakly-Supervised Instance Segmentation (CVPR 2022), invited by Prof. Rhee Chae Eun</h3>
-		    </li>
-		    <li>
-			    <h3>[2021] NeurIPS 2021 Social: ML in Republic of Korea. SSUL: Semantic Segmentation with Unknown Label for Exemplar-based Class-Incremental Learning</h3>
-		    </li>
-		</ul>
-	    </div>
-	    <!-- End .optional-section-block -->
+    <div class="yr">2023</div>
+    <div class="pub"><div class="vn">CVPR 2023</div><h3>The Devil is in the Points: Weakly Semi-Supervised Instance Segmentation via Point-Guided Mask Representation</h3><div class="au"><b>Beomyoung Kim</b>, Joonhyun Jeong, Dongyoon Han, Sung Ju Hwang</div><div class="ln"><a href="https://arxiv.org/abs/2303.15062" target="_blank">arXiv</a><a href="https://github.com/clovaai/PointWSSIS" target="_blank">code</a></div></div>
+
+    <div class="yr">2022</div>
+    <div class="pub"><div class="vn">CVPR 2022</div><h3>Beyond Semantic to Instance Segmentation via Semantic Knowledge Transfer and Self-Refinement</h3><div class="au"><b>Beomyoung Kim</b>, Youngjoon Yoo, Chaeeun Rhee, Junmo Kim</div><div class="ln"><a href="https://arxiv.org/abs/2109.09477" target="_blank">arXiv</a><a href="https://github.com/clovaai/BESTIE" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">ICLR 2022</div><h3>Learning Features with Parameter-Free Layers</h3><div class="au">Dongyoon Han, Youngjoon Yoo, <b>Beomyoung Kim</b>, Byeongho Heo</div><div class="ln"><a href="https://openreview.net/pdf?id=bCrdi4iVvv" target="_blank">paper</a><a href="https://github.com/naver-ai/PfLayer" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">WACV 2022</div><h3>TricubeNet: 2D Kernel-Based Object Representation for Weakly-Occluded Oriented Object Detection</h3><div class="au"><b>Beomyoung Kim</b>, Janghyeon Lee, Sihaeng Lee, Doyeon Kim, Junmo Kim</div><div class="ln"><a href="https://arxiv.org/abs/2104.11435" target="_blank">arXiv</a><a href="https://github.com/qjadud1994/TricubeNet" target="_blank">code</a></div></div>
+
+    <div class="yr">2021 &amp; earlier</div>
+    <div class="pub"><div class="vn">NeurIPS 2021</div><h3>SSUL: Semantic Segmentation with Unknown Label for Exemplar-based Class-Incremental Learning</h3><div class="au">Sungmin Cha*, <b>Beomyoung Kim*</b>, Youngjoon Yoo, Taesup Moon <i>(* equal)</i></div><div class="ln"><a href="https://arxiv.org/abs/2106.11562" target="_blank">arXiv</a><a href="https://github.com/clovaai/SSUL" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">AAAI 2021</div><h3>Discriminative Region Suppression for Weakly-Supervised Semantic Segmentation</h3><div class="au"><b>Beomyoung Kim</b>, Sangeun Han, Junmo Kim</div><div class="ln"><a href="https://arxiv.org/abs/2103.07246" target="_blank">arXiv</a><a href="https://github.com/qjadud1994/DRS" target="_blank">code</a></div></div>
+    <div class="pub"><div class="vn">MIWAI 2021</div><h3>3D Point Cloud Upsampling and Colorization using GAN</h3><div class="au"><b>Beomyoung Kim</b>, Sangeun Han, Eojindl Yi, Junmo Kim</div><div class="ln"><a href="https://link.springer.com/chapter/10.1007/978-3-030-80253-0_1" target="_blank">paper</a></div></div>
+    <div class="pub"><div class="vn">RiTA 2020</div><h3>Fully Automated Valet Parking System Based on Infrastructure Sensing</h3><div class="au">Hyunjee Ryu, <b>Beomyoung Kim</b>, Heecheol Yoo, Jungwon Lee</div><div class="ln"><a href="https://link.springer.com/chapter/10.1007/978-981-16-4803-8_3" target="_blank">paper</a></div></div>
+  </section>
+
+  <section>
+    <div class="eyebrow2">Research → Product</div>
+    <h2 class="h grotesk">Real-World Impact</h2>
+    <ul class="impact">
+      <li><b>ZIM — Zero-Shot Image Matting.</b> Promptable matting foundation model behind image-editing experiences. <a href="https://naver-ai.github.io/ZIM/" target="_blank">demo →</a></li>
+      <li><b>CLOVA-X Image Editing.</b> Generative image editing, presented at TEAM NAVER DAN 24. <a href="https://dan.naver.com/24/sessions/597" target="_blank">talk →</a></li>
+      <li><b>FaceSign — CLOVA Vision.</b> Face recognition service for NAVER identity verification &amp; payments. <a href="https://member.pay.naver.com/settings/face-sign/guide" target="_blank">learn more →</a></li>
+    </ul>
+  </section>
+
+  <section id="xp">
+    <div class="eyebrow2">Background</div>
+    <h2 class="h grotesk">Experience &amp; Education</h2>
+    <div class="two">
+      <div>
+        <div class="subhead">Experience</div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=naver.com&sz=128" alt="NAVER"><div class="body"><div class="t">NAVER Cloud · Image Vision</div><div class="s">AI Research Engineer</div></div><span class="w">2023 — now</span></div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=naver.com&sz=128" alt="NAVER"><div class="body"><div class="t">NAVER CLOVA · Image Vision</div><div class="s">AI Research Engineer</div></div><span class="w">2021 — 2023</span></div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=mobis.co.kr&sz=128" alt="org"><div class="body"><div class="t">Research Internships</div><div class="s">NAVER CLOVA (FACE, OCR) · Hyundai Mobis (Autonomous Driving)</div></div><span class="w">2018 — 2020</span></div>
+      </div>
+      <div>
+        <div class="subhead">Education</div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=kaist.ac.kr&sz=128" alt="KAIST"><div class="body"><div class="t">KAIST · Graduate School of AI</div><div class="s">Ph.D. — <a href="https://www.mlai-kaist.com/" target="_blank">MLAI Lab</a>, Prof. Sung Ju Hwang</div></div><span class="w">2022 — now</span></div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=kaist.ac.kr&sz=128" alt="KAIST"><div class="body"><div class="t">KAIST · Electrical Engineering</div><div class="s">M.S. — <a href="https://siit.kaist.ac.kr/" target="_blank">SIIT Lab</a>, Prof. Junmo Kim</div></div><span class="w">2019 — 2021</span></div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=inha.ac.kr&sz=128" alt="Inha"><div class="body"><div class="t">Inha University</div><div class="s">B.S. — Information &amp; Comm. Engineering</div></div><span class="w">2013 — 2019</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow2">Academic Service</div>
+    <h2 class="h grotesk">Conference &amp; Journal Reviewer</h2>
+    <div class="svc-rows">
+      <div class="r"><span class="y">2026</span><span class="v">CVPR · ECCV · NeurIPS · ICLR · TPAMI</span></div>
+      <div class="r"><span class="y">2025</span><span class="v">CVPR · ICCV · NeurIPS · ICLR · TMLR</span></div>
+      <div class="r"><span class="y">2024</span><span class="v">CVPR · ECCV · NeurIPS · ICLR · AAAI</span></div>
+      <div class="r"><span class="y">2023</span><span class="v">CVPR · ICCV · NeurIPS · WACV</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow2">Outreach</div>
+    <h2 class="h grotesk">Invited Talks</h2>
+    <div class="talks">
+      <div class="talk">
+        <img class="thumb" src="images/cw_1.jpg" alt="Centum Digital Week 2025">
+        <div class="tb"><div class="yr2">2025</div><h4>Centum Digital Week — Next Code 2025</h4><p>"Beyond AI, Into Agents." A researcher's story from the AI agent era.</p><a class="lk" href="https://www.cendiweek.com" target="_blank">event →</a></div>
+      </div>
+      <div class="talk">
+        <img class="thumb" src="images/dan24.png" alt="TEAM NAVER DAN 24">
+        <div class="tb"><div class="yr2">2024</div><h4>TEAM NAVER Conference DAN 24</h4><p>CLOVA-X Image Editing: the world of pixel magic delivered by AI.</p><a class="lk" href="https://dan.naver.com/24/sessions/597" target="_blank">session →</a></div>
+      </div>
+      <div class="talk">
+        <img class="thumb" src="images/career.png" alt="Catch Career-Con 2022">
+        <div class="tb"><div class="yr2">2022</div><h4>Jinhaksa Catch Career-Con</h4><p>How to land an AI research engineer role — career mentoring (NAVER CLOVA).</p></div>
+      </div>
+      <div class="talk">
+        <img class="thumb" src="images/ml_in_korea.png" alt="NeurIPS 2021 ML in Korea">
+        <div class="tb"><div class="yr2">2021</div><h4>NeurIPS 2021 Social — ML in Korea</h4><p>SSUL: Semantic Segmentation with Unknown Label for Class-Incremental Learning.</p></div>
+      </div>
+      <div class="talk">
+        <div class="ph">Inha University</div>
+        <div class="tb"><div class="yr2">2022</div><h4>Inha University — Invited Lecture</h4><p>Weakly-Supervised Instance Segmentation (CVPR 2022), hosted by Prof. Chaeeun Rhee.</p></div>
+      </div>
+    </div>
+  </section>
 </div>
-<!-- End .optional-section -->
-    <!-- End #projects -->
 
-    <div id="skills" class="background-alt">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>Pytorch</li>
-            <li>Tensorflow</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C++</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
+<footer>© 2026 Beomyoung Kim · beomyoung.kim@navercorp.com</footer>
 
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/qjadud1994@gmail.com">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2020 YOUR NAME
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/qjadud1994" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+<script>
+  const roles=["multimodal & vision-language models","perception-grounded VLMs","visual reasoning agents","image segmentation & matting","label-efficient learning"];
+  let ri=0,ci=0,del=false;const el=document.getElementById('typed');
+  function tick(){const w=roles[ri];el.textContent="> "+w.slice(0,ci);
+    if(!del){ci++;if(ci>w.length){del=true;setTimeout(tick,1400);return;}}
+    else{ci--;if(ci<0){del=false;ri=(ri+1)%roles.length;ci=0;}}
+    setTimeout(tick,del?40:80);}
+  tick();
+</script>
+<script>
+(function(){
+  fetch('data/citations.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+    if(!d)return;
+    document.querySelectorAll('[data-cite="total"]').forEach(function(e){if(d.total!=null)e.textContent=d.total;});
+    document.querySelectorAll('[data-cite="hindex"]').forEach(function(e){if(d.hindex!=null)e.textContent=d.hindex;});
+    document.querySelectorAll('[data-cite-arxiv]').forEach(function(e){
+      var n=d.papers&&d.papers[e.getAttribute('data-cite-arxiv')];
+      if(n&&n>0){e.textContent=(e.getAttribute('data-cite-prefix')||'')+n+' citation'+(n===1?'':'s');e.style.display='';}
+      else{e.style.display='none';}
+    });
+  }).catch(function(){});
+})();
+</script>
 </body>
-
 </html>

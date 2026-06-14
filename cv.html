@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beomyoung Kim — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1320; --muted:#4f5663; --faint:#8a929c; --line:#e7e9ee;
+    --c1:#4f46e5; --c2:#06b6d4; --grad:linear-gradient(90deg,#4f46e5,#06b6d4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#eef0f4;line-height:1.55;padding:34px 18px;-webkit-font-smoothing:antialiased}
+  a{color:var(--c1);text-decoration:none}a:hover{text-decoration:underline}
+  .grotesk{font-family:'Space Grotesk',sans-serif}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  .bar{max-width:830px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .bar a,.bar button{font-size:14px;font-weight:500;font-family:Inter}
+  .bar button{background:var(--c1);color:#fff;border:0;padding:9px 17px;border-radius:9px;cursor:pointer}
+  .bar button:hover{filter:brightness(1.08)}
+
+  .page{max-width:830px;margin:0 auto;background:#fff;padding:52px 56px;box-shadow:0 12px 44px rgba(20,30,60,.10);border-radius:8px}
+
+  /* header */
+  header.cv{display:grid;grid-template-columns:1fr 104px;gap:26px;align-items:start;border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:22px}
+  header.cv h1{font-family:'Space Grotesk';font-size:38px;font-weight:700;letter-spacing:-.02em;line-height:1}
+  header.cv .title{font-size:16px;color:var(--ink);font-weight:600;margin-top:8px}
+  header.cv .tag{font-size:14px;color:var(--muted);margin-top:3px}
+  header.cv .contact{font-family:'JetBrains Mono';font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.9}
+  header.cv .contact a{color:var(--c1)}
+  header.cv .contact .sep{color:var(--line);margin:0 7px}
+  .photo{width:104px;height:104px;border-radius:14px;object-fit:cover;border:1px solid var(--line)}
+
+  h2.sec{font-family:'JetBrains Mono';font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--c1);font-weight:600;margin:24px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+
+  .summary{font-size:14.5px;color:#2c333f}
+  .highlights{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 26px}
+  .highlights li{font-size:13.8px;color:#2c333f;padding-left:18px;position:relative}
+  .highlights li::before{content:'▹';position:absolute;left:0;color:var(--c1);font-weight:700}
+  .highlights b{font-weight:600}
+
+  .role{margin-bottom:15px}
+  .role .rhead{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:baseline}
+  .role h3{font-size:15.5px;font-weight:600}
+  .role .org{color:var(--c1)}
+  .role .when{font-family:'JetBrains Mono';font-size:12.5px;color:var(--faint);white-space:nowrap}
+  .role .loc{font-size:13px;color:var(--muted);margin-top:1px}
+  .role ul{margin:7px 0 0 0;padding-left:18px}
+  .role li{font-size:13.8px;color:#2c333f;margin-bottom:3px;padding-left:2px}
+  .role li b{font-weight:600}
+
+  .edu{display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:11px}
+  .edu h3{font-size:15px;font-weight:600}
+  .edu .s{font-size:13.5px;color:var(--muted)}
+  .edu .when{font-family:'JetBrains Mono';font-size:12.5px;color:var(--faint);white-space:nowrap}
+
+  .urlist{list-style:none}
+  .urlist li{font-size:13.8px;color:#2c333f;padding:5px 0;border-bottom:1px dotted var(--line)}
+  .urlist li:last-child{border:0}
+  .ur{font-family:'JetBrains Mono';font-size:10.5px;font-weight:600;letter-spacing:.06em;color:#b45309;background:#fff7ed;border:1px solid #fed7aa;padding:2px 7px;border-radius:5px;text-transform:uppercase;margin-right:7px}
+
+  ol.pubs{padding-left:22px}
+  ol.pubs li{margin-bottom:12px}
+  .pubs .star{color:#b25e00;font-weight:700;margin-right:2px}
+  .pubs .pt{font-weight:600;color:var(--ink);font-size:14px}
+  .pubs .pa{display:block;color:var(--muted);font-size:12.6px;margin:2px 0}
+  .pubs .me{color:var(--ink);font-weight:600}
+  .pubs .pv{font-size:12.5px;color:var(--muted)}
+  .pubs .pv a{font-weight:500}
+  .venue{color:var(--c1);font-weight:600}
+  .cite{font-family:'JetBrains Mono';font-size:11px;color:var(--faint)}
+  .kname{font-family:'JetBrains Mono';font-size:18px;color:var(--faint);font-weight:400;letter-spacing:.02em}
+  .hl-badge{font-size:10.5px;color:#b25e00;background:#fff3e0;border:1px solid #ffd699;padding:1px 6px;border-radius:5px;font-weight:600}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:8px 30px}
+  .line{font-size:13.8px;color:#2c333f;margin-bottom:5px}
+  .line .y{font-family:'JetBrains Mono';font-size:12px;color:var(--c1);font-weight:500;margin-right:8px}
+  .skill-row{font-size:13.8px;color:#2c333f;margin-bottom:6px}
+  .skill-row b{font-weight:600;color:var(--ink)}
+
+  @media(max-width:680px){
+    header.cv{grid-template-columns:1fr}.photo{order:-1;width:88px;height:88px}
+    .highlights,.twocol{grid-template-columns:1fr}
+    .role .rhead,.edu{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff;padding:0;font-size:11.5px}
+    .bar{display:none}
+    .page{box-shadow:none;border-radius:0;padding:0;max-width:100%}
+    a{color:var(--ink)}
+    header.cv h1{-webkit-text-fill-color:#0f1320}
+    .role,.edu{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html">← Home</a>
+  <button onclick="window.print()">⤓ Save as PDF</button>
+</div>
+
+<div class="page">
+  <header class="cv">
+    <div>
+      <h1 class="grotesk">Beomyoung <span class="grad-text">Kim</span> <span class="kname">김범영</span></h1>
+      <div class="title">AI Research Engineer — NAVER Cloud (Image Vision)</div>
+      <div class="tag">Computer Vision · Multimodal AI · Vision-Language Models</div>
+      <div class="contact">
+        <a href="mailto:beomyoung.kim@navercorp.com">beomyoung.kim@navercorp.com</a><span class="sep">·</span>📍 Seoul, Korea<br>
+        <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ">Google Scholar</a><span class="sep">·</span>
+        <a href="https://github.com/qjadud1994">GitHub</a><span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/beomyoung-kim">LinkedIn</a><span class="sep">·</span>
+        <a href="https://dblp.org/pid/264/6398.html">DBLP</a>
+      </div>
+    </div>
+    <img class="photo" src="images/pic_beom.jpg" alt="Beomyoung Kim">
+  </header>
+
+  <h2 class="sec">Summary</h2>
+  <p class="summary" style="margin-bottom:10px">I am an AI Research Engineer at NAVER and a Ph.D. student at KAIST, working at the intersection of computer vision and multimodal AI. My research journey began in core <b>visual recognition</b> — semantic and instance segmentation, object detection, and image matting — where I focused on making perception models both accurate and practical through label-efficient (weakly- and semi-supervised) and continual learning. This line of work has produced <b>13+ publications</b> at top venues including CVPR, ICCV, NeurIPS, ICLR and AAAI (<span data-cite="total">570</span> citations, h-index <span data-cite="hindex">9</span>), with an <b>ICCV 2025 Highlight</b>.</p>
+  <p class="summary">Today, I am extending this deep perception expertise into <b>multimodal &amp; vision-language models</b> — building perception-grounded VLMs and visual reasoning agents that not only recognize what they see, but localize, reason, and act upon it. I am especially driven by research that reaches the real world: throughout my career I have bridged frontier research and large-scale products at NAVER, from a zero-shot image-matting foundation model to generative image editing and face recognition used by millions. My goal is to build AI that perceives, understands, and reasons about the visual world as richly and reliably as people do.</p>
+
+  <h2 class="sec">Highlights</h2>
+  <ul class="highlights">
+    <li><b>13+ peer-reviewed papers</b> at CVPR, ICCV, NeurIPS, ICLR, AAAI</li>
+    <li><b><span data-cite="total">570</span> citations</b>, h-index <span data-cite="hindex">9</span> (Google Scholar)</li>
+    <li><b>ICCV 2025 Highlight</b> (top ~3% of accepted papers) — ZIM</li>
+    <li><b>Research → product</b>: image editing &amp; face recognition at NAVER</li>
+    <li><b>2 papers under review</b> at NeurIPS 2026 &amp; ECCV 2026</li>
+    <li><b>Open-source</b> author of widely-used CV codebases</li>
+  </ul>
+
+  <h2 class="sec">Experience</h2>
+
+  <div class="role">
+    <div class="rhead"><h3>AI Research Engineer — <span class="org">NAVER Cloud</span>, Image Vision</h3><span class="when">Jan 2023 – Present</span></div>
+    <div class="loc">Seongnam, Korea</div>
+    <ul>
+      <li>Drive computer-vision research extending into <b>multimodal &amp; vision-language models</b> — building perception-grounded VLMs and visual reasoning agents for fine-grained visual understanding and spatial reasoning.</li>
+      <li>Created <b><a href="https://naver-ai.github.io/ZIM/" target="_blank">ZIM</a></b>, a promptable zero-shot image-matting foundation model (<b>ICCV 2025 Highlight</b>); <a href="https://github.com/naver-ai/ZIM" target="_blank">open-sourced</a> with a public demo and integrated into image-editing experiences.</li>
+      <li>Contributed generative image-editing technology presented at <b><a href="https://dan.naver.com/24/sessions/597" target="_blank">TEAM NAVER DAN 24</a></b> (CLOVA-X), and face recognition powering NAVER <b><a href="https://member.pay.naver.com/settings/face-sign/guide" target="_blank">FaceSign</a></b>.</li>
+      <li>First-author publications at top venues; <b>2 papers currently under review</b> (NeurIPS 2026, ECCV 2026).</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="rhead"><h3>AI Research Engineer — <span class="org">NAVER CLOVA</span>, Image Vision</h3><span class="when">Jan 2021 – Jan 2023</span></div>
+    <div class="loc">Seongnam, Korea</div>
+    <ul>
+      <li>Advanced <b>label-efficient and continual segmentation</b>, producing first-author CVPR papers: ECLIPSE (continual panoptic segmentation), PointWSSIS (point-supervised instance segmentation), and BESTIE (weakly-supervised instance segmentation).</li>
+      <li>Developed weakly- and semi-supervised methods that substantially reduce annotation cost for semantic/instance segmentation; released open-source codebases adopted by the research community.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="rhead"><h3>Research Internships</h3><span class="when">2018 – 2020</span></div>
+    <ul>
+      <li><b>NAVER CLOVA Visual AI (FACE)</b>, 2020 — face recognition / understanding research.</li>
+      <li><b>Hyundai Mobis, Autonomous Driving Advanced Development</b>, 2019 — perception for autonomous driving.</li>
+      <li><b>NAVER CLOVA Vision (OCR)</b>, 2018 — optical character recognition research.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Education</h2>
+  <div class="edu"><div><h3>Ph.D., Kim Jaechul Graduate School of AI — KAIST</h3><div class="s"><a href="https://www.mlai-kaist.com/" target="_blank">MLAI Lab</a>, advised by Prof. Sung Ju Hwang <span style="color:var(--faint)">(in parallel with full-time work)</span></div></div><span class="when">2022 – Present</span></div>
+  <div class="edu"><div><h3>M.S., Electrical Engineering (Future Vehicle) — KAIST</h3><div class="s"><a href="https://siit.kaist.ac.kr/" target="_blank">SIIT Lab</a>, advised by Prof. Junmo Kim</div></div><span class="when">2019 – 2021</span></div>
+  <div class="edu"><div><h3>B.S., Information and Communication Engineering — Inha University</h3></div><span class="when">2013 – 2019</span></div>
+
+  <h2 class="sec">Under Review</h2>
+  <ul class="urlist">
+    <li><span class="ur">Under review · NeurIPS 2026</span>A diagnostic framework for 3D spatial reasoning that turns silent perception failures in visual program synthesis into typed diagnoses, driving targeted program repair to rival frontier VLMs without task-specific training.</li>
+    <li><span class="ur">Under review · ECCV 2026</span>A segmentation mask-refinement framework that synthesizes realistic, semantic-aware errors via adversarial perturbation and corrects them with contrastive learning, consistently improving state-of-the-art segmentation models.</li>
+  </ul>
+
+  <h2 class="sec">Selected Publications <span style="font-family:Inter;text-transform:none;letter-spacing:0;font-weight:400;color:var(--faint);font-size:11px">(★ = first author · full list on <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ">Scholar</a>)</span></h2>
+  <ol class="pubs">
+    <li><span class="star">★</span><span class="pt">ZIM: Zero-Shot Image Matting for Anything.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Chanyong Shin, Joonhyun Jeong, Hyungsik Jung, Se-Yun Lee, Sewhan Chun, Dong-Hyun Hwang, Joonsang Yu.</span>
+      <span class="pv"><span class="venue">ICCV 2025</span> <span class="hl-badge">Highlight</span> <span class="cite" data-cite-arxiv="2411.00626" data-cite-prefix="· "></span> · <a href="https://arxiv.org/pdf/2411.00626">paper</a> · <a href="https://github.com/naver-ai/ZIM">code</a> · <a href="https://naver-ai.github.io/ZIM/">project</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">Towards Label-Efficient Human Matting: A Simple Baseline for Weakly Semi-Supervised Trimap-Free Human Matting.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Myeong Yeon Yi, Joonsang Yu, Young Joon Yoo, Sung Ju Hwang.</span>
+      <span class="pv"><span class="venue">arXiv 2024</span> <span class="cite" data-cite-arxiv="2404.00921" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2404.00921">paper</a> · <a href="https://github.com/clovaai/WSSHM">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">Rethinking Saliency-Guided Weakly-Supervised Semantic Segmentation.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Donghyeon Kim, Sung Ju Hwang.</span>
+      <span class="pv"><span class="venue">arXiv 2024</span> <span class="cite" data-cite-arxiv="2404.00918" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2404.00918">paper</a> · <a href="https://github.com/clovaai/WSSS-BED">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">ECLIPSE: Efficient Continual Learning in Panoptic Segmentation with Visual Prompt Tuning.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Joonsang Yu, Sung Ju Hwang.</span>
+      <span class="pv"><span class="venue">CVPR 2024</span> <span class="cite" data-cite-arxiv="2403.20126" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2403.20126">paper</a> · <a href="https://github.com/clovaai/ECLIPSE">code</a></span></li>
+
+    <li><span class="pt">EResFD: Rediscovery of the Effectiveness of Standard Convolution for Lightweight Face Detection.</span>
+      <span class="pa">Joonhyun Jeong, <span class="me">Beomyoung Kim</span>, Joonsang Yu, Youngjoon Yoo.</span>
+      <span class="pv"><span class="venue">WACV 2024</span> <span class="cite" data-cite-arxiv="2204.01209" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2204.01209">paper</a> · <a href="https://github.com/clovaai/EResFD">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">The Devil is in the Points: Weakly Semi-Supervised Instance Segmentation via Point-Guided Mask Representation.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Joonhyun Jeong, Dongyoon Han, Sung Ju Hwang.</span>
+      <span class="pv"><span class="venue">CVPR 2023</span> <span class="cite" data-cite-arxiv="2303.15062" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2303.15062">paper</a> · <a href="https://github.com/clovaai/PointWSSIS">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">Beyond Semantic to Instance Segmentation: Weakly-Supervised Instance Segmentation via Semantic Knowledge Transfer and Self-Refinement.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Youngjoon Yoo, Chaeeun Rhee, Junmo Kim.</span>
+      <span class="pv"><span class="venue">CVPR 2022</span> <span class="cite" data-cite-arxiv="2109.09477" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2109.09477">paper</a> · <a href="https://github.com/clovaai/BESTIE">code</a></span></li>
+
+    <li><span class="pt">Learning Features with Parameter-Free Layers.</span>
+      <span class="pa">Dongyoon Han, Youngjoon Yoo, <span class="me">Beomyoung Kim</span>, Byeongho Heo.</span>
+      <span class="pv"><span class="venue">ICLR 2022</span> <span class="cite" data-cite-arxiv="2202.02777" data-cite-prefix="· "></span> · <a href="https://openreview.net/pdf?id=bCrdi4iVvv">paper</a> · <a href="https://github.com/naver-ai/PfLayer">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">TricubeNet: 2D Kernel-Based Object Representation for Weakly-Occluded Oriented Object Detection.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Janghyeon Lee, Sihaeng Lee, Doyeon Kim, Junmo Kim.</span>
+      <span class="pv"><span class="venue">WACV 2022</span> <span class="cite" data-cite-arxiv="2104.11435" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2104.11435">paper</a> · <a href="https://github.com/qjadud1994/TricubeNet">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">SSUL: Semantic Segmentation with Unknown Label for Exemplar-based Class-Incremental Learning.</span>
+      <span class="pa">Sungmin Cha*, <span class="me">Beomyoung Kim*</span>, Youngjoon Yoo, Taesup Moon <i>(* equal contribution)</i>.</span>
+      <span class="pv"><span class="venue">NeurIPS 2021</span> <span class="cite" data-cite-arxiv="2106.11562" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2106.11562">paper</a> · <a href="https://github.com/clovaai/SSUL">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">Discriminative Region Suppression for Weakly-Supervised Semantic Segmentation.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Sangeun Han, Junmo Kim.</span>
+      <span class="pv"><span class="venue">AAAI 2021</span> <span class="cite" data-cite-arxiv="2103.07246" data-cite-prefix="· "></span> · <a href="https://arxiv.org/abs/2103.07246">paper</a> · <a href="https://github.com/qjadud1994/DRS">code</a></span></li>
+
+    <li><span class="star">★</span><span class="pt">3D Point Cloud Upsampling and Colorization using GAN.</span>
+      <span class="pa"><span class="me">Beomyoung Kim</span>, Sangeun Han, Eojindl Yi, Junmo Kim.</span>
+      <span class="pv"><span class="venue">MIWAI 2021</span> · <a href="https://link.springer.com/chapter/10.1007/978-3-030-80253-0_1">paper</a></span></li>
+
+    <li><span class="pt">Fully Automated Valet Parking System Based on Infrastructure Sensing.</span>
+      <span class="pa">Hyunjee Ryu, <span class="me">Beomyoung Kim</span>, Heecheol Yoo, Jungwon Lee.</span>
+      <span class="pv"><span class="venue">RiTA 2020</span> · <a href="https://link.springer.com/chapter/10.1007/978-981-16-4803-8_3">paper</a></span></li>
+  </ol>
+
+  <h2 class="sec">Honors &amp; Awards</h2>
+  <div class="line"><span class="y">2025</span>ICCV 2025 <b>Highlight</b> (top ~3% of accepted papers) — ZIM</div>
+
+  <h2 class="sec">Academic Service — Reviewer</h2>
+  <div class="line"><span class="y">2026</span>CVPR · ECCV · NeurIPS · ICLR · TPAMI</div>
+  <div class="line"><span class="y">2025</span>CVPR · ICCV · NeurIPS · ICLR · TMLR</div>
+  <div class="line"><span class="y">2024</span>CVPR · ECCV · NeurIPS · ICLR · AAAI</div>
+  <div class="line"><span class="y">2023</span>CVPR · ICCV · NeurIPS · WACV</div>
+
+  <h2 class="sec">Invited Talks</h2>
+  <div class="twocol">
+    <div class="line"><span class="y">2025</span>Centum Digital Week — "Next Code 2025: Beyond AI, Into Agents"</div>
+    <div class="line"><span class="y">2024</span>TEAM NAVER DAN 24 — CLOVA-X Image Editing</div>
+    <div class="line"><span class="y">2022</span>Jinhaksa Catch Career-Con — AI Research Engineer career</div>
+    <div class="line"><span class="y">2022</span>Inha University — Weakly-Supervised Instance Segmentation</div>
+    <div class="line"><span class="y">2021</span>NeurIPS 2021 Social: ML in Korea — SSUL</div>
+  </div>
+
+  <h2 class="sec">Technical Skills</h2>
+  <div class="skill-row"><b>Research areas:</b> Image Segmentation &amp; Detection · Image Matting · Vision Foundation Models · Multimodal / Vision-Language Models · Visual Reasoning Agents · Label-Efficient &amp; Continual Learning</div>
+  <div class="skill-row"><b>Frameworks &amp; tools:</b> PyTorch · TensorFlow · large-scale / distributed training</div>
+  <div class="skill-row"><b>Programming:</b> Python · C++ · C · Java</div>
+
+  <h2 class="sec">Languages</h2>
+  <div class="skill-row">Korean (native) · English (intermediate — conversational working proficiency)</div>
+</div>
+<script>
+(function(){
+  fetch('data/citations.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+    if(!d)return;
+    document.querySelectorAll('[data-cite="total"]').forEach(function(e){if(d.total!=null)e.textContent=d.total;});
+    document.querySelectorAll('[data-cite="hindex"]').forEach(function(e){if(d.hindex!=null)e.textContent=d.hindex;});
+    document.querySelectorAll('[data-cite-arxiv]').forEach(function(e){
+      var n=d.papers&&d.papers[e.getAttribute('data-cite-arxiv')];
+      if(n&&n>0){e.textContent=(e.getAttribute('data-cite-prefix')||'')+n+' citation'+(n===1?'':'s');e.style.display='';}
+      else{e.style.display='none';}
+    });
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
