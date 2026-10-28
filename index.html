@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beomyoung Kim</title>
+<title>Beomyoung Kim — Self-Improving Agents &amp; Computer Vision</title>
+<meta name="description" content="Beomyoung Kim, Research Scientist at NAVER Cloud and Ph.D. student at KAIST, researching self-improving agents with frozen model weights, multimodal AI, and computer vision.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -63,10 +64,15 @@
   .themes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .tcard{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--surf);transition:.18s}
   .tcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,30,80,.07);border-color:rgba(79,70,229,.3)}
-  .tcard h3{font-family:'Space Grotesk';font-size:16px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-  .tcard .now{font-family:'JetBrains Mono';font-size:10px;font-weight:500;color:#0a7d3c;background:#e6f6ec;padding:2px 7px;border-radius:5px;letter-spacing:.03em}
+  .tcard h3{font-family:'Space Grotesk';font-size:16px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .tcard .now{font-family:'JetBrains Mono';font-size:10px;font-weight:500;color:#0a7d3c;background:#e6f6ec;padding:2px 7px;border-radius:5px;letter-spacing:.03em;white-space:nowrap}
   .tcard p{font-size:14px;color:var(--muted);line-height:1.5}
+  .tcard b{color:var(--ink);font-weight:600}
   .tcard .ex{font-size:12.5px;color:var(--faint);margin-top:8px}
+  .tcard--current{padding:22px;margin-bottom:24px;border-color:#c7d2fe;background:linear-gradient(135deg,#f5f5ff,var(--surf))}
+  .tcard--current h3{font-size:20px}
+  .tcard--current .focus{font-size:15px;color:var(--c1);font-weight:600;margin-bottom:10px}
+  .tcard--current .scope{margin-top:10px}
 
   /* news */
   .news .n{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
@@ -148,11 +154,12 @@
 
   <header class="hero">
     <div class="hero-main">
-      <div class="eyebrow">Computer Vision · Perception · VLMs · Visual Agents</div>
+      <div class="eyebrow">Self-Improving Agents · Multimodal AI · Computer Vision</div>
       <h1 class="grotesk">Beomyoung <span class="grad-text">Kim</span> <span class="kname">김범영</span></h1>
-      <p class="role"><b>Applied Scientist</b>, NAVER Cloud (Image Vision)</p>
+      <p class="role"><b>Research Scientist</b>, NAVER Cloud (Image Vision)</p>
       <div class="typed mono" id="typed"></div>
-      <p class="lead">I'm an Applied Scientist at NAVER Cloud on a mission to build AI that truly understands the visual world. My journey began in core <b>visual recognition</b> — segmentation, detection, and matting — with <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">572</span> citations, h-index <span data-cite="hindex">9</span>). I'm now extending that perception expertise into <b>multimodal &amp; vision-language models</b> — perception-grounded VLMs and visual reasoning agents that don't just see, but reason and act. My north star: research that ships — turning frontier ideas into products used by millions. I'm also pursuing my Ph.D. at KAIST alongside full-time research at NAVER Cloud.</p>
+      <p class="lead">I'm a Research Scientist at NAVER Cloud and a Ph.D. student at KAIST. My current research focuses on <b>self-improving agents</b> — <b>agents for agents</b> that analyze execution trajectories, identify limitations, and iteratively improve agent systems with frozen model weights. I currently focus on visual agents, with the goal of developing methods that generalize across agent systems.</p>
+      <p class="lead">My background spans <b>visual recognition</b> — segmentation, detection, and matting — and <b>grounded VLMs and visual reasoning agents</b>, with <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">608</span> citations, h-index <span data-cite="hindex">10</span>). I bring that experience in perception and diagnostic reasoning, along with a track record of taking research into products used by millions, to my current work on agents that improve through experience.</p>
       <div class="cta">
         <a class="btn btn-p" href="cv.html">View CV</a>
         <a class="btn btn-g" href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ" target="_blank">Google Scholar</a>
@@ -169,11 +176,11 @@
   </header>
 
   <section style="border-top:0;padding-top:0">
-    <!-- metrics are static snapshots (2026-06); refresh periodically from Scholar -->
+    <!-- Fallback metrics mirror data/citations.json (Google Scholar, 2026-10-28); refreshed on load. -->
     <div class="stats">
       <div class="stat"><div class="n grad-text">14+</div><div class="l">Publications</div></div>
-      <div class="stat"><div class="n grad-text" data-cite="total">572</div><div class="l">Citations</div></div>
-      <div class="stat"><div class="n grad-text" data-cite="hindex">9</div><div class="l">h-index</div></div>
+      <div class="stat"><div class="n grad-text" data-cite="total">608</div><div class="l">Citations</div></div>
+      <div class="stat"><div class="n grad-text" data-cite="hindex">10</div><div class="l">h-index</div></div>
       <div class="stat"><div class="n grad-text">5+</div><div class="l">Years @ NAVER</div></div>
     </div>
   </section>
@@ -181,8 +188,15 @@
   <section id="research">
     <div class="eyebrow2">Research</div>
     <h2 class="h grotesk">What I work on</h2>
+    <div class="tcard tcard--current">
+      <h3>Self-Improving Agents <span class="now">NOW @ NAVER</span></h3>
+      <p class="focus">Agents for Agents</p>
+      <p>Developing meta-agents that analyze execution trajectories, identify where an agent falls short, propose and apply targeted changes, and re-evaluate its behavior. This improvement loop refines the agent harness — its prompts and instructions, workflows and tool use, code and architecture, and memory and skills — while keeping all model weights frozen.</p>
+      <p class="scope">Currently focused on <b>visual agents</b>, with the goal of developing improvement methods that generalize across agent systems.</p>
+    </div>
+    <div class="subhead">Earlier Research</div>
     <div class="themes">
-      <div class="tcard"><h3>VLMs &amp; Visual Reasoning Agent <span class="now">NOW @ NAVER</span></h3><p>Extending my visual-recognition expertise to vision-language models — multimodal LLMs/VLMs with fine-grained visual perception and grounding, and visual reasoning agents that perceive, localize, and reason over images.</p></div>
+      <div class="tcard"><h3>VLMs &amp; Visual Reasoning Agents</h3><p>Studied grounded VLMs that connect language to pixel- and region-level evidence, and visual reasoning agents that compose specialist vision models into executable workflows.</p><p class="ex">Failure diagnosis &amp; targeted program repair</p></div>
       <div class="tcard"><h3>Vision Foundation Models &amp; Matting</h3><p>Promptable, zero-shot segmentation &amp; matting for anything; label-efficient human matting.</p><p class="ex">ZIM (ICCV'25 Highlight) · WSSHM</p></div>
       <div class="tcard"><h3>Label-Efficient Segmentation</h3><p>Weakly- and semi-supervised semantic &amp; instance segmentation from cheap supervision.</p><p class="ex">PointWSSIS · BESTIE · DRS · WSSS-BED</p></div>
       <div class="tcard"><h3>Continual &amp; Efficient Learning</h3><p>Class-incremental and panoptic continual segmentation; lightweight, efficient models.</p><p class="ex">ECLIPSE · SSUL · EResFD · PfLayer</p></div>
@@ -260,7 +274,7 @@
     <div class="two">
       <div>
         <div class="subhead">Experience</div>
-        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=naver.com&sz=128" alt="NAVER Cloud"><div class="body"><div class="t">NAVER Cloud · Image Vision</div><div class="s">Applied Scientist · formerly NAVER CLOVA</div></div><span class="w">2021 — now</span></div>
+        <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=naver.com&sz=128" alt="NAVER Cloud"><div class="body"><div class="t">NAVER Cloud · Image Vision</div><div class="s">Research Scientist · self-improving agents<br>formerly NAVER CLOVA</div></div><span class="w">2021 — now</span></div>
         <div class="item"><img class="logo" src="https://www.google.com/s2/favicons?domain=mobis.co.kr&sz=128" alt="org"><div class="body"><div class="t">Research Internships</div><div class="s">NAVER CLOVA (FACE, OCR) · Hyundai Mobis (Autonomous Driving)</div></div><span class="w">2018 — 2020</span></div>
       </div>
       <div>
@@ -314,7 +328,7 @@
 <footer>© 2026 Beomyoung Kim · beomyoung.kim@navercorp.com</footer>
 
 <script>
-  const roles=["multimodal & vision-language models","perception-grounded VLMs","visual reasoning agents","image segmentation & matting","label-efficient learning"];
+  const roles=["self-improving agents","agents for agents","visual agents","multimodal AI","segmentation & matting"];
   let ri=0,ci=0,del=false;const el=document.getElementById('typed');
   function tick(){const w=roles[ri];el.textContent="> "+w.slice(0,ci);
     if(!del){ci++;if(ci>w.length){del=true;setTimeout(tick,1400);return;}}

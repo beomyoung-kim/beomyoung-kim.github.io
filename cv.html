@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Beomyoung Kim — Curriculum Vitae</title>
+<meta name="description" content="Curriculum vitae of Beomyoung Kim, Research Scientist at NAVER Cloud and Ph.D. student at KAIST, researching self-improving agents, multimodal AI, and computer vision.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -87,13 +88,16 @@
     .highlights,.twocol{grid-template-columns:1fr}
     .role .rhead,.edu{grid-template-columns:1fr}
   }
+  @page{size:A4;margin:12mm}
   @media print{
     body{background:#fff;padding:0;font-size:11.5px}
     .bar{display:none}
     .page{box-shadow:none;border-radius:0;padding:0;max-width:100%}
     a{color:var(--ink)}
     header.cv h1{-webkit-text-fill-color:#0f1320}
-    .role,.edu{break-inside:avoid}
+    h2.sec,.role .rhead,.role .loc{break-after:avoid}
+    .role{break-inside:auto}
+    header.cv,.highlights,.edu,.role li,.pubs li,.urlist li{break-inside:avoid}
   }
 </style>
 </head>
@@ -107,8 +111,8 @@
   <header class="cv">
     <div>
       <h1 class="grotesk">Beomyoung <span class="grad-text">Kim</span> <span class="kname">김범영</span></h1>
-      <div class="title">Applied Scientist — NAVER Cloud (Image Vision)</div>
-      <div class="tag">Computer Vision · Perception · VLMs · Visual Agents</div>
+      <div class="title">Research Scientist — NAVER Cloud (Image Vision)</div>
+      <div class="tag">Self-Improving Agents · Multimodal AI · Computer Vision</div>
       <div class="contact">
         <a href="mailto:beomyoung.kim@navercorp.com">Email</a><span class="sep">·</span>📍 Seoul, Korea<br>
         <a href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ">Google Scholar</a><span class="sep">·</span>
@@ -121,25 +125,25 @@
   </header>
 
   <h2 class="sec">Summary</h2>
-  <p class="summary" style="margin-bottom:10px">I am an Applied Scientist at NAVER Cloud and a Ph.D. student at KAIST, working at the intersection of computer vision and multimodal AI. My research journey began in core <b>visual recognition</b> — semantic and instance segmentation, object detection, and image matting — where I focused on making perception models both accurate and practical through label-efficient (weakly- and semi-supervised) and continual learning. This line of work has produced <b>14+ publications</b> at top venues including CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">572</span> citations, h-index <span data-cite="hindex">9</span>), with an <b>ICCV 2025 Highlight</b>.</p>
-  <p class="summary">Today, I am extending that deep perception expertise into <b>vision-language models &amp; visual reasoning agents</b> — researching grounded VLMs that resolve region-level queries directly from pixel evidence rather than unsupported text, and training-free agentic program synthesis that composes specialist vision models into query-specific reasoning workflows for spatial and temporal reasoning tasks. I am especially driven by research that reaches the real world: at NAVER Cloud, I have repeatedly carried ideas from paper to product — a zero-shot image-matting foundation model behind CLOVA-X's image editing, a foreground-segmentation API that outperforms leading commercial APIs, and a face-authentication system serving millions of users. My goal is to build AI that perceives, understands, and reasons about the visual world as richly and reliably as people do.</p>
+  <p class="summary" style="margin-bottom:10px">I am a Research Scientist at NAVER Cloud and a Ph.D. student at KAIST. My current research focuses on <b>self-improving agents</b> — meta-agents that use execution experience to diagnose limitations and iteratively improve agent harnesses with frozen model weights. I currently focus on <b>visual agents</b>, aiming to develop broadly applicable methods for agent improvement.</p>
+  <p class="summary">My earlier work spans label-efficient and continual <b>visual recognition</b> — segmentation, detection, and matting — and <b>grounded VLMs and visual reasoning agents</b>. This background in perception and diagnostic reasoning informs my current research. I have published <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">608</span> citations, h-index <span data-cite="hindex">10</span>), including an <b>ICCV 2025 Highlight</b>, and brought research into production through a zero-shot image-matting foundation model for CLOVA-X image editing, a foreground-segmentation API, and a face-authentication system serving millions of users.</p>
 
   <h2 class="sec">Highlights</h2>
   <ul class="highlights">
     <li><b>7 first-author papers</b> at top-tier venues — CVPR · ICCV · ECCV · NeurIPS</li>
-    <li><b>5+ years</b> as an Applied Scientist at NAVER Cloud with a proven <b>research → product</b> track record</li>
+    <li><b>5+ years</b> as a Research Scientist at NAVER Cloud with a proven <b>research → product</b> track record</li>
     <li><b>Ph.D. candidate</b> pursued in parallel with full-time research</li>
-    <li><b>Continuously pushing new frontiers</b> — Visual Reasoning Agents &amp; grounded VLMs</li>
+    <li><b>Current research</b> — Self-Improving Agents &amp; Automated Agent Design</li>
   </ul>
 
   <h2 class="sec">Experience</h2>
 
   <div class="role">
-    <div class="rhead"><h3>Applied Scientist — <span class="org">NAVER Cloud</span>, Image Vision</h3><span class="when">Jan 2021 – Present</span></div>
+    <div class="rhead"><h3>Research Scientist — <span class="org">NAVER Cloud</span>, Image Vision</h3><span class="when">Jan 2021 – Present</span></div>
     <div class="loc">Seongnam, Korea · formerly NAVER CLOVA, reorganized into NAVER Cloud</div>
     <ul>
-      <li><b>Grounded Multimodal AI</b> <span style="color:var(--faint)">(ongoing)</span> — Researching grounded VLMs that connect language reasoning with pixel- and region-level visual evidence, so models can resolve region-based queries and reason more verifiably instead of relying on unsupported textual descriptions.</li>
-      <li><b>Visual Reasoning Agents</b> <span style="color:var(--faint)">(ongoing)</span> — Researching training-free agentic program synthesis that dynamically builds query-specific, executable workflows from specialist vision models, targeting multi-step spatial and temporal reasoning that remains difficult for end-to-end VLMs, especially where task-specific data or post-training is impractical.</li>
+      <li><b>Self-Improving Agents</b> <span style="color:var(--faint)">(ongoing)</span> — Developing meta-agents that analyze execution trajectories, diagnose limitations, and iteratively propose, apply, and evaluate harness updates across prompts and instructions, workflows and tool use, code and agent architecture, and memory and skills, with all model weights frozen. Currently focused on visual agents, with the goal of generalizing the improvement process across agent systems.</li>
+      <li><b>Grounded VLMs &amp; Visual Reasoning Agents</b> — Researched VLMs grounded in pixel- and region-level evidence and training-free agentic program synthesis that composes specialist vision models into executable workflows for spatial and temporal reasoning. Developed failure diagnosis and targeted program repair for 3D spatial reasoning.</li>
       <li>Created <b><a href="https://naver-ai.github.io/ZIM/" target="_blank">ZIM</a></b>, a promptable zero-shot image-matting foundation model (<b>ICCV 2025 Highlight</b>), by improving SAM through architecture, loss, and data-pipeline design on an ~1M-image curated dataset; <a href="https://github.com/naver-ai/ZIM" target="_blank">open-sourced</a> with a public demo and integrated into the <a href="https://dan.naver.com/24/sessions/597" target="_blank">CLOVA-X Image Editing</a> service.</li>
       <li>Developed the model and dataset for a <b>foreground-segmentation API</b> now served internally, outperforming Photoroom, Remove.bg, and Adobe segmentation APIs in internal evaluation.</li>
       <li>Built the face anti-spoofing model behind <b><a href="https://member.pay.naver.com/settings/face-sign/guide" target="_blank">FaceSign</a></b>, a face-authentication system replacing payment and employee-badge tagging, for this government-certified service.</li>
@@ -249,7 +253,7 @@
   </div>
 
   <h2 class="sec">Technical Skills</h2>
-  <div class="skill-row"><b>Research areas:</b> Image Segmentation &amp; Detection · Image Matting · Vision Foundation Models · Multimodal / Vision-Language Models · Visual Reasoning Agents · Label-Efficient &amp; Continual Learning</div>
+  <div class="skill-row"><b>Research areas:</b> Self-Improving Agents · Automated Agent Design · Visual Reasoning Agents · Multimodal / Vision-Language Models · Vision Foundation Models · Image Segmentation, Detection &amp; Matting · Label-Efficient &amp; Continual Learning</div>
   <div class="skill-row"><b>Frameworks &amp; tools:</b> PyTorch · TensorFlow · large-scale / distributed training</div>
   <div class="skill-row"><b>Programming:</b> Python · C++ · C · Java</div>
 
