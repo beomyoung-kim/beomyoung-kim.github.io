@@ -125,15 +125,15 @@
   </header>
 
   <h2 class="sec">Summary</h2>
-  <p class="summary" style="margin-bottom:10px">I am a Research Scientist at NAVER Cloud and a Ph.D. student at KAIST. My current research focuses on <b>self-improving agents</b> — meta-agents that use execution experience to diagnose limitations and iteratively improve agent harnesses with frozen model weights. I currently focus on <b>visual agents</b>, aiming to develop broadly applicable methods for agent improvement.</p>
-  <p class="summary">My earlier work spans label-efficient and continual <b>visual recognition</b> — segmentation, detection, and matting — and <b>grounded VLMs and visual reasoning agents</b>. This background in perception and diagnostic reasoning informs my current research. I have published <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">608</span> citations, h-index <span data-cite="hindex">10</span>), including an <b>ICCV 2025 Highlight</b>, and brought research into production through a zero-shot image-matting foundation model for CLOVA-X image editing, a foreground-segmentation API, and a face-authentication system serving millions of users.</p>
+  <p class="summary" style="margin-bottom:10px">I am a Research Scientist at NAVER Cloud and a Ph.D. student at KAIST. My current research focuses on <b>self-improving agents</b> — building <i>agents for agents</i>: meta-agents that diagnose a base agent's failures from its execution traces and optimize its prompts, harness, and tools from only a few labeled examples, with model weights frozen. I currently focus on <b>visual reasoning agents</b>, aiming to develop broadly applicable methods for agent improvement.</p>
+  <p class="summary">My earlier work spans label-efficient and continual <b>visual recognition</b> — segmentation, detection, and matting — and <b>grounded VLMs and visual reasoning agents</b>. This background in perception and diagnostic reasoning informs my current research. I have published <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">621</span> citations, h-index <span data-cite="hindex">10</span>), including an <b>ICCV 2025 Highlight</b>, and brought research into production through a zero-shot image-matting foundation model for CLOVA-X image editing, a foreground-segmentation API, and a face-authentication system serving millions of users.</p>
 
   <h2 class="sec">Highlights</h2>
   <ul class="highlights">
     <li><b>7 first-author papers</b> at top-tier venues — CVPR · ICCV · ECCV · NeurIPS</li>
     <li><b>5+ years</b> as a Research Scientist at NAVER Cloud with a proven <b>research → product</b> track record</li>
     <li><b>Ph.D. candidate</b> pursued in parallel with full-time research</li>
-    <li><b>Current research</b> — Self-Improving Agents &amp; Automated Agent Design</li>
+    <li><b>Current research</b> — <i>Agents for agents</i>: meta-agents that diagnose and optimize other agents from a few labeled examples</li>
   </ul>
 
   <h2 class="sec">Experience</h2>
@@ -142,7 +142,7 @@
     <div class="rhead"><h3>Research Scientist — <span class="org">NAVER Cloud</span>, Image Vision</h3><span class="when">Jan 2021 – Present</span></div>
     <div class="loc">Seongnam, Korea · formerly NAVER CLOVA, reorganized into NAVER Cloud</div>
     <ul>
-      <li><b>Self-Improving Agents</b> <span style="color:var(--faint)">(ongoing)</span> — Developing meta-agents that analyze execution trajectories, diagnose limitations, and iteratively propose, apply, and evaluate harness updates across prompts and instructions, workflows and tool use, code and agent architecture, and memory and skills, with all model weights frozen. Currently focused on visual agents, with the goal of generalizing the improvement process across agent systems.</li>
+      <li><b>Agents for Agents: Few-Shot Self-Improving Visual Agents</b> <span style="color:var(--faint)">(ongoing)</span> — Building a meta-agent that improves a frozen base agent from only a handful of labeled examples: it audits the base agent's full execution traces against ground truth, localizes where they go wrong, and proposes and empirically verifies fix hypotheses to optimize the agent's prompts, harness, and tools. Characterizing the challenges unique to visual reasoning to inform methods that generalize across agent systems.</li>
       <li><b>Grounded VLMs &amp; Visual Reasoning Agents</b> — Researched VLMs grounded in pixel- and region-level evidence and training-free agentic program synthesis that composes specialist vision models into executable workflows for spatial and temporal reasoning. Developed failure diagnosis and targeted program repair for 3D spatial reasoning.</li>
       <li>Created <b><a href="https://naver-ai.github.io/ZIM/" target="_blank">ZIM</a></b>, a promptable zero-shot image-matting foundation model (<b>ICCV 2025 Highlight</b>), by improving SAM through architecture, loss, and data-pipeline design on an ~1M-image curated dataset; <a href="https://github.com/naver-ai/ZIM" target="_blank">open-sourced</a> with a public demo and integrated into the <a href="https://dan.naver.com/24/sessions/597" target="_blank">CLOVA-X Image Editing</a> service.</li>
       <li>Developed the model and dataset for a <b>foreground-segmentation API</b> now served internally, outperforming Photoroom, Remove.bg, and Adobe segmentation APIs in internal evaluation.</li>

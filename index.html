@@ -158,8 +158,8 @@
       <h1 class="grotesk">Beomyoung <span class="grad-text">Kim</span> <span class="kname">김범영</span></h1>
       <p class="role"><b>Research Scientist</b>, NAVER Cloud (Image Vision)</p>
       <div class="typed mono" id="typed"></div>
-      <p class="lead">I'm a Research Scientist at NAVER Cloud and a Ph.D. student at KAIST. My current research focuses on <b>self-improving agents</b> — <b>agents for agents</b> that analyze execution trajectories, identify limitations, and iteratively improve agent systems with frozen model weights. I currently focus on visual agents, with the goal of developing methods that generalize across agent systems.</p>
-      <p class="lead">My background spans <b>visual recognition</b> — segmentation, detection, and matting — and <b>grounded VLMs and visual reasoning agents</b>, with <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">608</span> citations, h-index <span data-cite="hindex">10</span>). I bring that experience in perception and diagnostic reasoning, along with a track record of taking research into products used by millions, to my current work on agents that improve through experience.</p>
+      <p class="lead">I'm a Research Scientist at NAVER Cloud and a Ph.D. student at KAIST. My current research focuses on <b>self-improving agents</b> — <b>agents for agents</b>: meta-agents that diagnose a base agent's failures from its execution traces and optimize its prompts, harness, and tools from only a few labeled examples, with model weights frozen. I currently focus on visual reasoning agents, with the goal of developing methods that generalize across agent systems.</p>
+      <p class="lead">My background spans <b>visual recognition</b> — segmentation, detection, and matting — and <b>grounded VLMs and visual reasoning agents</b>, with <b>14+ papers</b> at CVPR, ICCV, ECCV, NeurIPS, and AAAI (<span data-cite="total">621</span> citations, h-index <span data-cite="hindex">10</span>). I bring that experience in perception and diagnostic reasoning, along with a track record of taking research into products used by millions, to my current work on agents that improve through experience.</p>
       <div class="cta">
         <a class="btn btn-p" href="cv.html">View CV</a>
         <a class="btn btn-g" href="https://scholar.google.co.kr/citations?user=n_TR1LcAAAAJ" target="_blank">Google Scholar</a>
@@ -176,10 +176,10 @@
   </header>
 
   <section style="border-top:0;padding-top:0">
-    <!-- Fallback metrics mirror data/citations.json (Google Scholar, 2026-10-28); refreshed on load. -->
+    <!-- Fallback metrics mirror data/citations.json (Google Scholar, 2026-11-20); refreshed on load. -->
     <div class="stats">
       <div class="stat"><div class="n grad-text">14+</div><div class="l">Publications</div></div>
-      <div class="stat"><div class="n grad-text" data-cite="total">608</div><div class="l">Citations</div></div>
+      <div class="stat"><div class="n grad-text" data-cite="total">621</div><div class="l">Citations</div></div>
       <div class="stat"><div class="n grad-text" data-cite="hindex">10</div><div class="l">h-index</div></div>
       <div class="stat"><div class="n grad-text">5+</div><div class="l">Years @ NAVER</div></div>
     </div>
@@ -191,8 +191,8 @@
     <div class="tcard tcard--current">
       <h3>Self-Improving Agents <span class="now">NOW @ NAVER</span></h3>
       <p class="focus">Agents for Agents</p>
-      <p>Developing meta-agents that analyze execution trajectories, identify where an agent falls short, propose and apply targeted changes, and re-evaluate its behavior. This improvement loop refines the agent harness — its prompts and instructions, workflows and tool use, code and architecture, and memory and skills — while keeping all model weights frozen.</p>
-      <p class="scope">Currently focused on <b>visual agents</b>, with the goal of developing improvement methods that generalize across agent systems.</p>
+      <p>Building a meta-agent that improves a frozen base agent from only a handful of labeled examples. It audits the base agent's full execution traces against ground truth, localizes where they go wrong, then proposes and empirically verifies fix hypotheses to optimize the agent's prompts, harness, and tools — all while keeping model weights frozen.</p>
+      <p class="scope">Currently focused on <b>few-shot self-improving visual agents</b>, characterizing the challenges unique to visual reasoning to inform improvement methods that generalize across agent systems.</p>
     </div>
     <div class="subhead">Earlier Research</div>
     <div class="themes">
